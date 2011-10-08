@@ -92,6 +92,20 @@ RailsAdmin.config do |config|
   # RailsAdmin will try his best to provide the best defaults for each section, for each field! 
   # Try to override as few things as possible, in the most generic way. Try to avoid setting labels for models and attributes, use ActiveRecord I18n API instead. 
   # Less code is better code!
+
+  config.model Athlete do
+    parent Competition
+  end
+
+  config.model Event do
+    parent Competition
+  end
+
+  config.model EventAthlete do
+    parent Competition
+    label 'Athlete Scores'
+  end
+
   # config.model MyModel do
   #   # Here goes your cross-section field configuration for ModelName.
   #   object_label_method :name     # Name of the method called for pretty printing an *instance* of ModelName

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111008224103) do
+ActiveRecord::Schema.define(:version => 20111008230207) do
 
   create_table "athletes", :force => true do |t|
     t.string   "number"
@@ -31,11 +31,22 @@ ActiveRecord::Schema.define(:version => 20111008224103) do
     t.datetime "updated_at"
   end
 
+  create_table "event_athletes", :force => true do |t|
+    t.integer  "athlete_id"
+    t.integer  "event_id"
+    t.string   "result"
+    t.integer  "score"
+    t.integer  "event_rank"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "events", :force => true do |t|
     t.integer  "competition_id"
     t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "name"
   end
 
   create_table "rails_admin_histories", :force => true do |t|

@@ -5,12 +5,11 @@ Domain Model
 
 A Competition
 Has many Events
-Has many AthleteGroupings (Men's RX, Women's RX, Men's scaled, Women's scaled)
 
 
-Has many Athletes
-
+Athletes
+Have many EventAthletes (score, rank)
 
 
 Who was the top male RX athlete?
- Competition.
+ Competition.athletes(men's rx'd).sort_by(:score).first
