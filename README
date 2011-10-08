@@ -1,0 +1,16 @@
+Insanely quick app using rails admin to do manage scoring of multi-event crossfit competitions.
+
+Domain Model
+============
+
+A Competition
+Has many Events
+Has many AthleteGroupings (Men's RX, Women's RX, Men's scaled, Women's scaled)
+
+
+Has many Athletes
+
+
+
+Who was the top male RX athlete?
+ Competition.
