@@ -5,4 +5,8 @@ class Event < ActiveRecord::Base
   validates_presence_of :name
   validates_presence_of :description
   validates_presence_of :competition_id
+  
+  def ranked_athletes
+    []
+  end
 end

@@ -105,9 +105,29 @@ RailsAdmin.config do |config|
   config.model Event do
     sort_by :name
     weight 80
-    field :name
-    field :description
-    field :competition
+    list do
+      field :name
+      field :description
+      field :competition
+    end
+
+    show do
+      field :name
+      field :description
+      field :competition
+      field :rank_by_small do
+        label "Time based (lowest wins)?"
+      end
+    end
+    
+    edit do
+      field :name
+      field :description
+      field :competition
+      field :rank_by_small do
+        label "Time based (or lowest wins)? If the higher number wins, leave unchecked."
+      end
+    end
   end
 
   config.model Athlete do

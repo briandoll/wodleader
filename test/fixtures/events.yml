@@ -4,8 +4,14 @@
 # model remove the '{}' from the fixture names and add the columns immediately
 # below each fixture, per the syntax in the comments below
 #
-one: {}
-# column: value
-#
-two: {}
-#  column: value
+goheavy:
+  name: 'Go Heavy'
+  description: 'go super heavy'
+  competition: tjsgames
+  rank_by_small: false
+
+gofast:
+  name: 'Go Fast'
+  description: 'go super fast'
+  competition: tjsgames
+  rank_by_small: true

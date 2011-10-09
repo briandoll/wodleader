@@ -4,8 +4,7 @@
 # model remove the '{}' from the fixture names and add the columns immediately
 # below each fixture, per the syntax in the comments below
 #
-one: {}
-# column: value
-#
-two: {}
-#  column: value
+tjsgames:
+  name: "TJ\'s Gym Games"
+  when: "October 23rd, 2011"
+  where: "Cowtown"
