@@ -5,14 +5,14 @@ class EventAthlete < ActiveRecord::Base
   validates_presence_of :event_id
   
   def name
-    "#{event.competition.name} / #{athlete.name} / #{event.name}"
+    @name ||= "#{competition.name} / #{athlete.name} / #{event.name}"
   end
   
   def athlete_number
-    athlete.number
+    @athlete_number ||= athlete.number
   end
   
   def competition
-    event.competition.name
+    @competition ||= event.competition.name
   end
 end
