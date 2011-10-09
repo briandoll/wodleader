@@ -93,17 +93,90 @@ RailsAdmin.config do |config|
   # Try to override as few things as possible, in the most generic way. Try to avoid setting labels for models and attributes, use ActiveRecord I18n API instead. 
   # Less code is better code!
 
-  config.model Athlete do
-    parent Competition
+  config.model Competition do
+    sort_by :name
+    field :name
+    field :where
+    field :when
+    field :description
+    weight 70
   end
 
   config.model Event do
-    parent Competition
+    sort_by :name
+    weight 80
+    field :name
+    field :description
+    field :competition
+  end
+
+  config.model Athlete do
+    sort_by :name
+    weight 90
+
+    list do
+      field :name
+      field :number
+      field :age
+      field :affiliation
+      field :competition
+      field :event_athletes do
+        label "Athlete Scores"
+      end
+    end
+
+    show do
+      field :name
+      field :number
+      field :age
+      field :affiliation
+      field :competition
+      field :event_athletes do
+        label "Athlete Scores"
+      end
+    end
+    
+    edit do
+      field :name
+      field :number
+      field :age
+      field :affiliation
+      field :competition
+    end
   end
 
   config.model EventAthlete do
-    parent Competition
     label 'Athlete Scores'
+    weight 100
+    list do
+      field :competition do
+        searchable false
+      end
+      field :event do
+        searchable [:name]
+      end
+      field :athlete do
+        searchable [:name, :number]
+      end
+      field :athlete_number do
+        searchable false
+      end
+      field :result
+    end
+    
+    show do
+      field :competition
+      field :event
+      field :athlete
+      field :athlete_number
+      field :result
+      field :score
+      field :event_rank
+    end
+    
+    edit do
+      field :result
+    end
   end
 
   # config.model MyModel do
