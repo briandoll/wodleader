@@ -19,3 +19,11 @@ brigidgoesfast:
 brigidgoesheavy:
   athlete: brigid
   event: goheavy
+
+blakegoesfast:
+  athlete: blake
+  event: gofast
+
+blakegoesheavy:
+  athlete: blake
+  event: goheavy

@@ -25,12 +25,13 @@ class EventAthlete < ActiveRecord::Base
     self.score = result
   end
 
-  def self.sort_scores(scores, lowest_wins = true)
-    no_score, scored = scores.partition{|e| e.nil? }
+  def self.sort_scores(event_athletes, lowest_wins = true)
+    no_score, scored = event_athletes.partition{|e| e.score.nil? }
+    sorted_by_score = scored.sort{|a,b| a.score <=> b.score}
     if lowest_wins
-      (scored.sort + no_score)
+      (sorted_by_score + no_score)
     else
-      (scored.sort.reverse + no_score)
+      (sorted_by_score.reverse + no_score)
     end
   end
 
@@ -42,14 +43,12 @@ class EventAthlete < ActiveRecord::Base
   end
   
   def update_rankings
-    # yea... so this just causes an infinite loop
-    # because when we save, we update the rankings
-    # which saves each item, which updates rankings
-    # which...
-    #soft_sort_by_rankings.each_with_index do |ea, index|
-      #ea.event_rank = (index + 1) #index is zero based
-      #ea.save
-    #end
+    if self.result_changed?
+      soft_sort_by_rankings.each_with_index do |ea, index|
+        ea.event_rank = (index + 1) #index is zero based
+        ea.save
+      end
+    end
   end
   
 end
