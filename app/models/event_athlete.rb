@@ -44,9 +44,19 @@ class EventAthlete < ActiveRecord::Base
   
   def update_rankings
     if self.result_changed?
+      previous_score_value = nil
+      previous_rank = nil
+
       soft_sort_by_rankings.each_with_index do |ea, index|
-        ea.event_rank = (index + 1) #index is zero based
+        if ea.score.eql?(previous_score_value)
+          ea.event_rank = previous_rank
+        else
+          ea.event_rank = (index + 1) #index is zero based
+        end
         ea.save
+        
+        previous_score_value = ea.score
+        previous_rank = ea.event_rank
       end
     end
   end

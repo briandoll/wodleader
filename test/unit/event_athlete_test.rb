@@ -41,21 +41,41 @@ class EventAthleteTest < ActiveSupport::TestCase
     event.rank_by_small = true
     event.save
     
-    third, second, first = event.event_athletes
+    fourth, third, second, first = event.event_athletes
     first.result = '100'
     first.save
     second.result = '200'
     second.save
     third.result = '201'
     third.save
-
+    fourth.result = '203'
+    fourth.save
+    
     assert_equal 1, EventAthlete.find(first.id).event_rank
     assert_equal 2, EventAthlete.find(second.id).event_rank
     assert_equal 3, EventAthlete.find(third.id).event_rank
+    assert_equal 4, EventAthlete.find(fourth.id).event_rank
   end
   
   def test_that_tie_scores_get_correct_rankings
-    #TODO
+    event = Event.first
+    event.rank_by_small = true
+    event.save
+    
+    fourth, third, second, first = event.event_athletes
+    first.result = '100'
+    first.save
+    second.result = '200'
+    second.save
+    third.result = '200'
+    third.save
+    fourth.result = '300'
+    fourth.save
+
+    assert_equal 1, EventAthlete.find(first.id).event_rank
+    assert_equal 2, EventAthlete.find(second.id).event_rank
+    assert_equal 2, EventAthlete.find(third.id).event_rank
+    assert_equal 4, EventAthlete.find(fourth.id).event_rank
   end
   
 end

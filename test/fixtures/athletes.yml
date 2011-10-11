@@ -11,8 +11,12 @@ brian:
 brigid:
   name: 'Brigid Doll'
   competition: tjsgames
-blake:
 
+blake:
   name: 'Blake Doll'
+  competition: tjsgames
+
+ben:
+  name: 'Ben Doll'
   competition: tjsgames
   

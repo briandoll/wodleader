@@ -27,3 +27,11 @@ blakegoesfast:
 blakegoesheavy:
   athlete: blake
   event: goheavy
+
+bengoesfast:
+  athlete: ben
+  event: gofast
+
+bengoesheavy:
+  athlete: ben
+  event: goheavy
