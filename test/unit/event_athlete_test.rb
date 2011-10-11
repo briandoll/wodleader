@@ -20,11 +20,10 @@ class EventAthleteTest < ActiveSupport::TestCase
   
   def test_result_to_score_for_duration
     ea = EventAthlete.first
-    ea.result = '5:14:30'
+    ea.result = '1:11:16'
     ea.save
     
-    #TODO
-    #assert_equal 1000, ea.score
+    assert_equal 71.2666666666667, EventAthlete.first.score
   end
   
   def test_sort_with_nils

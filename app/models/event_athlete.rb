@@ -22,7 +22,22 @@ class EventAthlete < ActiveRecord::Base
   private
   
   def result_to_score
-    self.score = result
+    score = result
+    if result.to_s.split(":").size > 1
+      score = EventAthlete.time_to_seconds(result)
+    end
+    self.score = score
+  end
+
+  def self.time_to_seconds(time_str)
+    seconds = nil 
+    split_str = time_str.to_s.split(":")
+    if split_str.size == 3
+      seconds =  (split_str[0].to_f * 60) + (split_str[1].to_f) + (split_str[2].to_f / 60)
+    elsif split_str.size == 2
+      seconds = (split_str[0].to_f) + (split_str[1].to_f / 60)
+    end
+    seconds
   end
 
   def self.sort_scores(event_athletes, lowest_wins = true)
