@@ -118,6 +118,9 @@ RailsAdmin.config do |config|
       field :rank_by_small do
         label "Time based (lowest wins)?"
       end
+      field :event_weight do
+        label "Event weighting (1.0 for normal weighting, 0.5 for half, etc.)"
+      end
     end
     
     edit do
@@ -126,6 +129,9 @@ RailsAdmin.config do |config|
       field :competition
       field :rank_by_small do
         label "Time based (or lowest wins)? If the higher number wins, leave unchecked."
+      end
+      field :event_weight do
+        label "Event weighting (1.0 for normal weighting, 0.5 for half, etc.)"
       end
     end
   end

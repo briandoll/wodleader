@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111009013706) do
+ActiveRecord::Schema.define(:version => 20111012055402) do
 
   create_table "athletes", :force => true do |t|
     t.string   "number"
@@ -48,6 +48,7 @@ ActiveRecord::Schema.define(:version => 20111009013706) do
     t.datetime "updated_at"
     t.string   "name"
     t.boolean  "rank_by_small"
+    t.decimal  "event_weight",   :default => 1.0
   end
 
   create_table "rails_admin_histories", :force => true do |t|

@@ -6,5 +6,9 @@ class Competition < ActiveRecord::Base
   def leader_board
     athletes.sort{|a,b| a.competition_rank_total <=> b.competition_rank_total}
   end
+  
+  def to_param
+    "#{id}-#{name.downcase.gsub(/[^a-z0-9]+/,'-').gsub(/-+&$/, '').gsub(/^-+$/, '')}"
+  end
 
 end
