@@ -1,3 +1,5 @@
+<div class="tk-adelle">
+  
 <% Competition.all.each do |competition| %>
   <p>
   <h1><%= link_to competition.name, competition_path(competition) %></h1>
@@ -6,3 +8,4 @@
   <h4><%= competition.description %></h4>
   </p>
 <% end %>
+</div>
