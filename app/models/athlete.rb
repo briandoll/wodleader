@@ -6,6 +6,12 @@ class Athlete < ActiveRecord::Base
 
   after_create :create_event_athletes
   
+  def competition_rank_total
+    rank = 0
+    event_athletes.each{|ea| rank += ea.event_rank}
+    rank
+  end
+  
   private
   
   def create_event_athletes

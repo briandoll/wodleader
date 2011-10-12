@@ -6,7 +6,7 @@ class Event < ActiveRecord::Base
   validates_presence_of :description
   validates_presence_of :competition_id
   
-  def ranked_athletes
-    []
+  def ranked_results
+    EventAthlete.ranked(self.id)
   end
 end
