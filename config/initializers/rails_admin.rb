@@ -34,7 +34,11 @@ RailsAdmin.config do |config|
   # end
   
   RailsAdmin.config do |config|
-    config.authenticate_with {}
+    config.authenticate_with do
+    	authenticate_or_request_with_http_basic('Admins Only') do |username, password|
+  			'crossfit'.eql?(username) && 'crossfit'.eql?(password)
+  		end
+    end
   end
   
   

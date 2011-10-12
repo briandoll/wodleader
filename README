@@ -1,15 +1,5 @@
 Insanely quick app using rails admin to do manage scoring of multi-event crossfit competitions.
 
-Domain Model
-============
+I wrote crossfit_scorekeeping_generator, which generates excel files for tracking multi-event crossfit competitions.  It served a handful of events, but was a pain to use.  I wanted to see how quickly I could port that logic to a rails app.  The goal was to complete the app on a 5 hour flight.  Unfortunately it took about 2 more hours.  Bummer.
 
-A Competition
-Has many Events
-
-
-Athletes
-Have many EventAthletes (score, rank)
-
-
-Who was the top male RX athlete?
- Competition.athletes(men's rx'd).sort_by(:score).first
+This app is a hack.  It's an exercise in writing shit as fast as possible.  There are infinite areas to improve performance, security and functionality.  For now, I'll be giving away access to a few gyms to use, and see what happens from there.
