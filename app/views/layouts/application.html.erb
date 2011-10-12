@@ -6,14 +6,27 @@
   <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
   <%= csrf_meta_tags %>
   <style type="text/css">
-    body { text-align: center; margin: 5em 0 0 0; vertical-align: middle; background-color:silver; font-family: adelle;} 
+    .blue {color: #004358;}
+    .green {color: #1F8A70;}
+    .yellow {color: #FFE11A;}
+    .orange {color: #FD7400;}
+    .white {color: #FFF;}
+    body { text-align: center; margin: 5em 0 0 0; vertical-align: middle; background-color:#004358; color: #FFE11A; font-family: adelle,serif; font-style: normal; font-weight: 100;} 
+    .light {font-family: adelle,serif; font-style: normal; font-weight: 100;}
+    pre {font-family: adelle,serif; font-style: normal; font-weight: 100;}
+    a {text-decoration: none; color: #fff;}
+    strong {color: #FD7400;}
     .content { width: 760px; text-align: left; margin: 0 auto; }
     .logo {font-size:32px;}
-    h1 {font-size: 48px; margin-bottom:10px;}
+    h1 {font-size: 48px; margin-bottom:10px; }
+    h2 {color: #FFF;}
+    h3 {color: #FD7400; font-size:24px;}
+    li {list-style-type: none; margin-left:20px; font-family: adelle,serif; font-style: normal; font-weight: 100; font-size:24px; margin-top: 10px; margin-bottom:10px;}
+    
   </style>
 </head>
 <body class="content">
-<div><span class="logo">Wodleader</span> // A multi-event crossfit scoring app // an <%= link_to "emphatic solution", "http://emphaticsolutions.com"%> by Brian Doll</div>
+<div><span class="logo">Wodleader</span> <span class="light">// A multi-event crossfit scoring app // an <%= link_to "emphatic solution", "http://emphaticsolutions.com"%> by Brian Doll</span></div>
 <%= yield %>
 
 </body>

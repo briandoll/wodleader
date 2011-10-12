@@ -3,9 +3,9 @@
 <% Competition.all.each do |competition| %>
   <p>
   <h1><%= link_to competition.name, competition_path(competition) %></h1>
-  When: <%= competition.when %><br/>
-  where: <%= competition.where %><br/><br/>
-  <h4><%= competition.description %></h4>
+  <strong>When:</strong> <%= competition.when %><br/>
+  <strong>where:</strong> <%= competition.where %><br/>
+  <p><%= competition.description %></p>
   </p>
 <% end %>
 </div>
