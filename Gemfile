@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.1.0'
+gem 'rails', '3.1.1'
 
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
@@ -23,5 +23,6 @@ gem 'jquery-rails'
 # gem 'capistrano'
 
 gem 'fastercsv'
-gem 'rails_admin', :git => 'git://github.com/sferik/rails_admin.git'
+#gem 'rails_admin', :git => 'git://github.com/sferik/rails_admin.git'
+gem 'rails_admin', :git => 'git://github.com/sferik/rails_admin.git', :ref => '4367490cb311ff61c8d4b721bf98748397374dc2'
 gem 'devise'
