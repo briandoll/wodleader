@@ -7,6 +7,7 @@ class Event < ActiveRecord::Base
   validates_presence_of :competition_id
   
   def ranked_results
-    EventAthlete.ranked(self.id)
+    EventAthlete.ranked_and_categorized(self.id)
   end
+
 end

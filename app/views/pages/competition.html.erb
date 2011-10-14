@@ -6,9 +6,12 @@
 
   
   <h2>Current Leader Board:</h2>
-  <% competition.leader_board.each_with_index do |athlete, index| %>
-    <% ranking = (index + 1)%>
-    <li><span class="rank">#<%= ranking %> : <%= "#{athlete.name}, (##{athlete.number})" %> - (<%= "#{athlete.competition_rank_total}" %>pts)</span></li>
+  <% competition.leader_board.each do |category, athletes| %>
+    <h4><%= category %></h4>
+    <% athletes.each_with_index do |athlete, index| %>
+      <% ranking = (index + 1)%>
+      <li><span class="rank">#<%= ranking %> : <%= "#{athlete.name}, (##{athlete.number})" %> - (<%= "#{athlete.competition_rank_total}" %>pts)</span></li>
+    <% end %>
   <% end %>
   <br/>
   <h2>Events:</h2>
@@ -18,8 +21,11 @@
     <% if !(1.0.eql?(event.event_weight.to_f)) %>
       <p class="orange">This event is worth <%= (event.event_weight * 100).to_i %>%</p>
     <% end %>
-      <% event.ranked_results.each do |result| %>
-        <li>#<%= result.event_rank %> : <%= "#{result.athlete.name}, (##{result.athlete.number})" %> - <%= result.result %></li>
+      <% event.ranked_results.each do |category, results| %>
+        <h4><%= category %></h4>
+        <% results.each do |result| %>
+          <li>#<%= result.event_rank %> : <%= "#{result.athlete.name}, (##{result.athlete.number})" %> - <%= result.result %></li>
+        <% end %>
       <% end %>
     <br/><br/>
   <% end %>

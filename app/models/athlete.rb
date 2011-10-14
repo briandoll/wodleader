@@ -8,6 +8,10 @@ class Athlete < ActiveRecord::Base
   
   after_create :create_event_athletes
   
+  def category
+    competition_category.name
+  end
+  
   def competition_rank_total
     rank = 0
     event_athletes.each do |ea|

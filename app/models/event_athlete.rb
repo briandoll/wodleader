@@ -23,6 +23,10 @@ class EventAthlete < ActiveRecord::Base
     EventAthlete.find_all_by_event_id(event_id, :order => :event_rank)
   end
   
+  def self.ranked_and_categorized(event_id)
+    EventAthlete.event_athletes_by_category(EventAthlete.ranked(event_id))
+  end
+  
   private
   
   def result_to_score
@@ -54,31 +58,55 @@ class EventAthlete < ActiveRecord::Base
     end
   end
 
-  def soft_sort_by_rankings
+  def soft_sort_by_rankings(unsorted_grouping)
     event = self.event
     lower_wins = event.rank_by_small
-    unranked = event.event_athletes
-    EventAthlete.sort_scores unranked, lower_wins
+    EventAthlete.sort_scores unsorted_grouping, lower_wins
+  end
+  
+  def self.event_athletes_by_category(event_athletes)
+    categorized = {}
+    event_athletes.each do |event_athlete|
+      category = event_athlete.athlete.category
+      if categorized[category]
+        categorized[category] << event_athlete
+      else
+        categorized[category] = [event_athlete]
+      end
+    end
+    categorized
   end
   
   def update_rankings
     if self.result_changed?
-      previous_score_value = nil
-      previous_rank = nil
-
-      soft_sort_by_rankings.each_with_index do |ea, index|
-        if same_scores(ea.score, previous_score_value)
-          ea.event_rank = previous_rank
-        else
-          ea.event_rank = (index + 1) #index is zero based
-        end
-        ea.save
-        
-        previous_score_value = ea.score
-        previous_rank = ea.event_rank
+      event_athletes = event.event_athletes
+      lower_wins = event.rank_by_small
+      rankings = EventAthlete.event_athletes_by_category(event_athletes)
+      rankings.each do |category,ea|
+        update_ranked_group(EventAthlete.sort_scores(ea, lower_wins))
       end
+      
     end
   end
+
+  def update_ranked_group(sorted_grouping)
+    previous_score_value = nil
+    previous_rank = nil
+
+    sorted_grouping.each_with_index do |ea, index|
+      if same_scores(ea.score, previous_score_value)
+        ea.event_rank = previous_rank
+      else
+        ea.event_rank = (index + 1) #index is zero based
+      end
+      ea.save
+      
+      previous_score_value = ea.score
+      previous_rank = ea.event_rank
+    end
+    
+  end
+
   
   def same_scores(score_a, score_b)
     if score_a.is_a?(Float) && score_b.is_a?(Float)
