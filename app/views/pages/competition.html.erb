@@ -21,7 +21,7 @@
     <% if !(1.0.eql?(event.event_weight.to_f)) %>
       <p class="orange">This event is worth <%= (event.event_weight * 100).to_i %>%</p>
     <% end %>
-      <% event.ranked_results.each do |category, results| %>
+      <% event.ranked_results.sort.each do |category, results| %>
         <h4><%= category %></h4>
         <% results.each do |result| %>
           <li>#<%= result.event_rank %> : <%= "#{result.athlete.name}, (##{result.athlete.number})" %> - <%= result.result %></li>
