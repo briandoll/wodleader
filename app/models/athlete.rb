@@ -3,7 +3,9 @@ class Athlete < ActiveRecord::Base
   has_many :event_athletes
   validates_presence_of :competition_id
   validates_presence_of :name
-
+  belongs_to :competition_category
+  validates_presence_of :competition_category
+  
   after_create :create_event_athletes
   
   def competition_rank_total

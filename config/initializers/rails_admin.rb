@@ -13,7 +13,7 @@ RailsAdmin.config do |config|
   
   config.current_user_method { }
   
-  config.main_app_name { ['Wodleader', 'Admin'] } # auto-generated
+  config.main_app_name { ['Wod Leader', 'Score Keeping'] } # auto-generated
   
   #  ==> Authentication (before_filter)
   # This is run inside the controller instance so you can setup any authentication you need to.
@@ -106,6 +106,11 @@ RailsAdmin.config do |config|
     weight 70
   end
 
+  config.model CompetitionCategory do
+    weight 75
+    field :name
+  end
+
   config.model Event do
     sort_by :name
     weight 80
@@ -161,6 +166,7 @@ RailsAdmin.config do |config|
       field :age
       field :affiliation
       field :competition
+      field :competition_category
       field :event_athletes do
         label "Athlete Scores"
       end
@@ -172,6 +178,7 @@ RailsAdmin.config do |config|
       field :age
       field :affiliation
       field :competition
+      field :competition_category
     end
   end
 
