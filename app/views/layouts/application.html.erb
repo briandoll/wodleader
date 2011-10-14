@@ -6,6 +6,7 @@
   <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
   <%= csrf_meta_tags %>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <%= yield :page_specific_head_tags %>
   <style type="text/css">
     .blue {color: #004358;}
     .green {color: #1F8A70;}
@@ -17,7 +18,7 @@
     pre {font-family: adelle,serif; font-style: normal; font-weight: 100;}
     a {text-decoration: none; color: #fff;}
     strong {color: #99FF66;}
-    .content { width: 50%; text-align: left; margin: 0 auto; }
+    .content { width: 600px; text-align: left; margin: 0 auto; }
     .logo {font-size:32px;}
     h1 {font-size: 48px; margin-bottom:10px; }
     h2 {color: #FFF; font-size:32px;}

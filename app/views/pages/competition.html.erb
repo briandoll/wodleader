@@ -1,31 +1,35 @@
-  <% competition = @competition%>
-  <h1 class="white"><%= competition.name %></h1>
-  <strong>When:</strong> <%= competition.when %><br/>
-  <strong>where:</strong> <%= competition.where %><br/><br/>
-  <p><%= competition.description %></p>
+<% competition = @competition%>
+<h1 class="white"><%= competition.name %></h1>
+<strong>When:</strong> <%= competition.when %><br/>
+<strong>where:</strong> <%= competition.where %><br/><br/>
+<p><%= competition.description %></p>
 
-  
-  <h2>Current Leader Board:</h2>
-  <% competition.leader_board.sort.each do |category, athletes| %>
-    <h4><%= category %></h4>
-    <% athletes.each_with_index do |athlete, index| %>
-      <% ranking = (index + 1)%>
-      <li><span class="rank">#<%= ranking %> : <%= "#{athlete.name}, (##{athlete.number})" %> - (<%= "#{athlete.competition_rank_total}" %>pts)</span></li>
-    <% end %>
+
+<h2>Current Leader Board:</h2>
+<% competition.leader_board.sort.each do |category, athletes| %>
+  <h4><%= category %></h4>
+  <% athletes.each_with_index do |athlete, index| %>
+    <% ranking = (index + 1)%>
+    <li><span class="rank">#<%= ranking %> : <%= "#{athlete.name}, (##{athlete.number})" %> - (<%= "#{athlete.competition_rank_total}" %>pts)</span></li>
   <% end %>
-  <br/>
-  <h2>Events:</h2>
-  <% competition.events.sort.each do |event| %>
-    <h3><%= event.name %></h3>
-    <p><pre class="orange"><%= event.description %></pre></p>
-    <% if !(1.0.eql?(event.event_weight.to_f)) %>
-      <p class="orange">This event is worth <%= (event.event_weight * 100).to_i %>%</p>
-    <% end %>
-      <% event.ranked_results.sort.each do |category, results| %>
-        <h4><%= category %></h4>
-        <% results.each do |result| %>
-          <li>#<%= result.event_rank %> : <%= "#{result.athlete.name}, (##{result.athlete.number})" %> - <%= result.result %></li>
-        <% end %>
+<% end %>
+<br/>
+<h2>Events:</h2>
+<% competition.events.sort.each do |event| %>
+  <h3><%= event.name %></h3>
+  <p><pre class="orange"><%= event.description %></pre></p>
+  <% if !(1.0.eql?(event.event_weight.to_f)) %>
+    <p class="orange">This event is worth <%= (event.event_weight * 100).to_i %>%</p>
+  <% end %>
+    <% event.ranked_results.sort.each do |category, results| %>
+      <h4><%= category %></h4>
+      <% results.each do |result| %>
+        <li>#<%= result.event_rank %> : <%= "#{result.athlete.name}, (##{result.athlete.number})" %> - <%= result.result %></li>
       <% end %>
-    <br/><br/>
-  <% end %>
+    <% end %>
+  <br/><br/>
+<% end %>
+
+<% content_for :page_specific_head_tags do %>
+  <meta http-equiv="refresh" content="60" >
+<% end %>
