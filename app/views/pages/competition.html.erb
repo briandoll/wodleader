@@ -6,7 +6,7 @@
 
   
   <h2>Current Leader Board:</h2>
-  <% competition.leader_board.each do |category, athletes| %>
+  <% competition.leader_board.sort.each do |category, athletes| %>
     <h4><%= category %></h4>
     <% athletes.each_with_index do |athlete, index| %>
       <% ranking = (index + 1)%>
@@ -15,7 +15,7 @@
   <% end %>
   <br/>
   <h2>Events:</h2>
-  <% competition.events.each do |event| %>
+  <% competition.events.sort.each do |event| %>
     <h3><%= event.name %></h3>
     <p><pre class="orange"><%= event.description %></pre></p>
     <% if !(1.0.eql?(event.event_weight.to_f)) %>
