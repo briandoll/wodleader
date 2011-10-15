@@ -19,6 +19,17 @@ class Competition < ActiveRecord::Base
     leaders
   end
   
+  def most_recent_stat_update
+    event_ids = events.select{|event| event.id}
+    recent = EventAthlete.where(:event_id => event_ids).order('updated_at DESC').first
+    puts recent.inspect
+    if recent
+      recent.updated_at
+    else
+      nil
+    end
+  end
+  
   def to_param
     "#{id}-#{name.downcase.gsub(/[^a-z0-9]+/,'-').gsub(/-+&$/, '').gsub(/^-+$/, '')}"
   end

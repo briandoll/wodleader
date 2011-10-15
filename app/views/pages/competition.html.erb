@@ -5,6 +5,13 @@
 <p><%= competition.description %></p>
 
 <h2>Current Leader Board:</h2>
+
+<% if updated = competition.most_recent_stat_update %>
+  <div class="green">Stats updated <%= time_ago_in_words(updated) %> ago</div>
+  <%= link_to "[Click to refresh]", competition_url(competition) , :class => 'small'%>
+<% end %>
+
+
 <% competition.leader_board.sort.each do |category, athletes| %>
   <h4><%= category %></h4>
   <% athletes.each_with_index do |athlete, index| %>
@@ -37,8 +44,4 @@
       <% end %>
     <% end %>
   <br/><br/>
-<% end %>
-
-<% content_for :page_specific_head_tags do %>
-  <meta http-equiv="refresh" content="60" >
 <% end %>
