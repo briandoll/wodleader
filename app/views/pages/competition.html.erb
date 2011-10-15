@@ -4,11 +4,11 @@
 <strong>where:</strong> <%= competition.where %><br/><br/>
 <p><%= competition.description %></p>
 
-<h2>Current Leader Board:</h2>
+<h2 class="tightbottom">Current Leader Board:</h2>
 
 <% if updated = competition.most_recent_stat_update %>
-  <div class="green">Stats updated <%= time_ago_in_words(updated) %> ago</div>
-  <%= link_to "[Click to refresh]", competition_url(competition) , :class => 'small'%>
+  <div class="greenish">Stats updated <%= time_ago_in_words(updated) %> ago</div>
+  <%= link_to "Refresh", competition_url(competition) , :class => 'myButton'%>
 <% end %>
 
 
