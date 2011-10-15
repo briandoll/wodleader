@@ -1,6 +1,6 @@
 class Competition < ActiveRecord::Base
-  has_many :events
-  has_many :athletes
+  has_many :events, :dependent => :destroy
+  has_many :athletes, :dependent => :destroy
   validates_presence_of :name, :when, :where
 
   def leader_board

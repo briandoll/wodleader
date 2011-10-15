@@ -1,6 +1,6 @@
 class Athlete < ActiveRecord::Base
   belongs_to :competition
-  has_many :event_athletes
+  has_many :event_athletes, :dependent => :destroy
   validates_presence_of :competition_id
   validates_presence_of :name
   belongs_to :competition_category
