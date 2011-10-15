@@ -11,10 +11,9 @@
     <% ranking = (index + 1)%>
     <div class="athlete">
       <span class="rank">#<%= ranking %></span>
-      <span class="athlete-info"><%= "#{athlete.name}" %><%= " (##{athlete.number})" if athlete.number %></span>
-      <span class="athlete-extra-info"><%= " from #{athlete.affiliation}" if athlete.affiliation %></span>
+      <span class="athlete-info"><%= "#{athlete.name}" %></span>
       <br/>
-      <span class="pts"><%= "#{athlete.competition_rank_total}" %>pts</span>
+      <span class="pts"><%= "#{athlete.competition_rank_total}" %>pts <span class="info"><%= " (##{athlete.number})" if athlete.number %><%= " from #{athlete.affiliation}" if athlete.affiliation %></span></span>
     </div>
   <% end %>
 <% end %>
@@ -31,10 +30,9 @@
       <% results.each do |result| %>
         <div class="athlete">
           <span class="rank">#<%= result.event_rank %></span>
-          <span class="athlete-info"><%= "#{result.athlete.name}" %><%= " (##{result.athlete.number})" if result.athlete.number %></span>
-          <span class="athlete-extra-info"><%= " from #{result.athlete.affiliation}" if result.athlete.affiliation %></span>
+          <span class="athlete-info"><%= "#{result.athlete.name}" %></span>
           <br/>
-          <span class="pts"><%= result.result %></span>
+          <span class="pts"><%= result.result %> <span class="info"><%= " (##{result.athlete.number})" if result.athlete.number %><%= " from #{result.athlete.affiliation}" if result.athlete.affiliation %></span></span>
         </div>
       <% end %>
     <% end %>
