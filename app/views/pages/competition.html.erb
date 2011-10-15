@@ -4,13 +4,18 @@
 <strong>where:</strong> <%= competition.where %><br/><br/>
 <p><%= competition.description %></p>
 
-
 <h2>Current Leader Board:</h2>
 <% competition.leader_board.sort.each do |category, athletes| %>
   <h4><%= category %></h4>
   <% athletes.each_with_index do |athlete, index| %>
     <% ranking = (index + 1)%>
-    <li><span class="rank">#<%= ranking %> : <%= "#{athlete.name}, (##{athlete.number})" %> - (<%= "#{athlete.competition_rank_total}" %>pts)</span></li>
+    <div class="athlete">
+      <span class="rank">#<%= ranking %></span>
+      <span class="athlete-info"><%= "#{athlete.name}" %><%= " (##{athlete.number})" if athlete.number %></span>
+      <span class="athlete-extra-info"><%= " from #{athlete.affiliation}" if athlete.affiliation %></span>
+      <br/>
+      <span class="pts"><%= "#{athlete.competition_rank_total}" %>pts</span>
+    </div>
   <% end %>
 <% end %>
 <br/>
@@ -24,7 +29,13 @@
     <% event.ranked_results.sort.each do |category, results| %>
       <h4><%= category %></h4>
       <% results.each do |result| %>
-        <li>#<%= result.event_rank %> : <%= "#{result.athlete.name}, (##{result.athlete.number})" %> - <%= result.result %></li>
+        <div class="athlete">
+          <span class="rank">#<%= result.event_rank %></span>
+          <span class="athlete-info"><%= "#{result.athlete.name}" %><%= " (##{result.athlete.number})" if result.athlete.number %></span>
+          <span class="athlete-extra-info"><%= " from #{result.athlete.affiliation}" if result.athlete.affiliation %></span>
+          <br/>
+          <span class="pts"><%= result.result %></span>
+        </div>
       <% end %>
     <% end %>
   <br/><br/>

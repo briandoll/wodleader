@@ -24,10 +24,15 @@
     h2 {color: #FFF; font-size:32px;}
     h3 {color: #99FF66; font-size:24px;}
     li {list-style-type: none; margin-left:20px; font-family: adelle,serif; font-style: normal; font-weight: 100; font-size:24px; margin-top: 10px; margin-bottom:10px;}
+    .athlete { margin-top: 10px; margin-bottom:20px; margin-left:20px; font-family: adelle,serif; }
+    .rank { font-style: normal; font-weight: 100; font-size:36px; margin-right: 20px; }
+    .athlete-info { font-style: normal; font-weight: 100; font-size:28px; }
+    .pts { margin-left: 63px;}
+    .small { font-size: 14px;}
   </style>
 </head>
 <body class="content">
-<div><span class="logo"><a href="/">Wodleader</a></span><br/><span class="light">A multi-event crossfit scoring app // an <%= link_to "emphatic solution", "http://emphaticsolutions.com"%> by Brian Doll</span></div>
+<div><span class="logo"><a href="/">Wodleader</a></span><br/><span class="light small">A multi-event crossfit scoring app by <%= link_to " Brian Doll", "http://emphaticsolutions.com"%>.<br/>Mobile friendly, leader board auto-refreshes every minute. Rock it.</span><hr/></div>
 <%= yield %>
 
 </body>
