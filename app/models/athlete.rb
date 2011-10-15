@@ -15,8 +15,10 @@ class Athlete < ActiveRecord::Base
   def competition_rank_total
     rank = 0
     event_athletes.each do |ea|
-      event_ranking = (ea.event_rank * ea.event.event_weight)
-      rank += event_ranking
+      if ea.event_rank
+        event_ranking = (ea.event_rank * ea.event.event_weight)
+        rank += event_ranking
+      end
     end
     rank
   end

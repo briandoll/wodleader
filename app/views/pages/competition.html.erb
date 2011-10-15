@@ -29,7 +29,7 @@
       <h4><%= category %></h4>
       <% results.each do |result| %>
         <div class="athlete">
-          <span class="rank">#<%= result.event_rank %></span>
+          <span class="rank">#<%= result.event_rank || 0 %></span>
           <span class="athlete-info"><%= "#{result.athlete.name}" %></span>
           <br/>
           <span class="pts"><%= result.result %> <span class="info"><%= " (##{result.athlete.number})" if result.athlete.number %><%= " from #{result.athlete.affiliation}" if result.athlete.affiliation %></span></span>
