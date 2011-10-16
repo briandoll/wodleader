@@ -18,6 +18,8 @@ class Athlete < ActiveRecord::Base
       if ea.event_rank
         event_ranking = (ea.event_rank * ea.event.event_weight)
         rank += event_ranking
+      else
+        rank += 100
       end
     end
     rank

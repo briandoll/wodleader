@@ -20,7 +20,9 @@ class EventAthlete < ActiveRecord::Base
   end
   
   def self.ranked(event_id)
-    EventAthlete.find_all_by_event_id(event_id, :order => :event_rank)
+    close = EventAthlete.find_all_by_event_id(event_id, :order => :event_rank)
+    no_rank, ranked = close.partition{|ea| ea.event_rank.nil? }
+    (ranked + no_rank)
   end
   
   def self.ranked_and_categorized(event_id)
