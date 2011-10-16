@@ -18,8 +18,7 @@
 
 <% competition.leader_board.sort.each do |category, athletes| %>
   <h4><%= category %></h4>
-  <% athletes.each_with_index do |athlete, index| %>
-    <% ranking = (index + 1)%>
+  <% leaderboard_ranking(athletes).each do |athlete, ranking| %>
     <div class="athlete">
       <span class="rank">#<%= ranking %></span>
       <span class="athlete-info"><%= "#{athlete.name}" %></span>
