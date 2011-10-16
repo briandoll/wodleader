@@ -12,6 +12,10 @@ class Event < ActiveRecord::Base
     EventAthlete.ranked_and_categorized(self.id)
   end
 
+  def <=>(other)
+    name <=> other.name
+  end
+
   private
   
   def create_event_athletes
