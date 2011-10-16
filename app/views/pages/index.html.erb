@@ -1,7 +1,7 @@
 <div class="tk-adelle">
 <% Competition.all.each do |competition| %>
   <p>
-  <h1><%= link_to competition.name, competition_path(competition) %></h1>
+  <h1><%= link_to "#{competition.name}  &raquo;".html_safe, competition_path(competition) %></h1>
   <strong>When:</strong> <%= competition.when %><br/>
   <strong>where:</strong> <%= competition.where %><br/>
   <p><%= competition.description %></p>
