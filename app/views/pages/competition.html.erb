@@ -7,8 +7,12 @@
 <h2 class="tightbottom">Current Leader Board:</h2>
 
 <% if updated = competition.most_recent_stat_update %>
-  <div class="greenish">Stats updated <%= time_ago_in_words(updated) %> ago</div>
-  <%= link_to "Refresh", competition_url(competition) , :class => 'myButton'%>
+  <div class="greenish blocky">
+    <%= link_to competition_url(competition), :class => 'refresh button' do %>
+      <%= image_tag "reload.png", :width => '30' %>
+    <% end %>
+    <span class="updated">Stats updated <%= time_ago_in_words(updated) %> ago</span>
+  </div>
 <% end %>
 
 
