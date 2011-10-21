@@ -32,7 +32,7 @@
 <% competition.events.sort.each do |event| %>
   <h3><%= event.name %></h3>
   <p><pre class="orange"><%= event.description %></pre></p>
-  <% if !(1.0.eql?(event.event_weight.to_f)) %>
+  <% if !([1.0, 1, nil].include?(event.event_weight)) %>
     <p class="orange">This event is worth <%= (event.event_weight * 100).to_i %>%</p>
   <% end %>
     <% event.ranked_results.sort.each do |category, results| %>
