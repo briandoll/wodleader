@@ -1,0 +1,3549 @@
+
+<!DOCTYPE html>
+<html>
+<head><script type="text/javascript">var NREUMQ=NREUMQ||[];NREUMQ.push(["mark","firstbyte",new Date().getTime()]);</script>
+  <title>Wodleader</title>
+  <script type="text/javascript" src="http://use.typekit.com/ufw0ggk.js"></script>
+  <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+  <meta content="authenticity_token" name="csrf-param" />
+<meta content="bbEGVYKvoPNMsbQcD0njV3UIq0Ll3GVkzaElw3Cp80U=" name="csrf-token" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  
+  <style type="text/css">
+    .blue {color: #004358;}
+    .green {color: #1F8A70;}
+    .yellow {color: #FFE11A;}
+    .greenish {color: #99FF66;}
+    .white {color: #FFF;}
+    body { text-align: center; margin: 5em 0 0 0; vertical-align: middle; background-color:#004358; color: #FFE11A; font-family: adelle,serif; font-style: normal; font-weight: 100; font-size: 18px;} 
+    .light {font-family: adelle,serif; font-style: normal; font-weight: 100;}
+    pre {font-family: adelle,serif; font-style: normal; font-weight: 100;}
+    a {text-decoration: none; color: #fff;}
+    strong {color: #99FF66;}
+    .content { width: 600px; text-align: left; margin: 0 auto; }
+    .logo {font-size:32px;}
+    h1 {font-size: 48px; margin-bottom:10px; }
+    h2 {color: #FFF; font-size:32px;}
+    h3 {color: #99FF66; font-size:24px;}
+    li {list-style-type: none; margin-left:20px; font-family: adelle,serif; font-style: normal; font-weight: 100; font-size:24px; margin-top: 10px; margin-bottom:10px;}
+    .athlete { margin-top: 10px; margin-bottom:20px; margin-left:20px; font-family: adelle,serif; }
+    .rank { font-style: normal; font-weight: 100; font-size:36px; margin-right: 20px; }
+    .athlete-info { font-style: normal; font-weight: 100; font-size:28px; }
+    .pts { margin-left: 63px; font-size: 28px;}
+    .small { font-size: 14px;}
+    .info { font-size: 18px;}
+    .tightbottom { margin-bottom: 0px;}
+    
+    
+  	a.button,
+  	button,
+  	input[type="submit"],
+  	input[type="reset"],
+  	input[type="button"] {
+  		background: #eee; /* Old browsers */
+  		background: #eee -moz-linear-gradient(top, rgba(255,255,255,.2) 0%, rgba(0,0,0,.2) 100%); /* FF3.6+ */
+  		background: #eee -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,.2)), color-stop(100%,rgba(0,0,0,.2))); /* Chrome,Safari4+ */
+  		background: #eee -webkit-linear-gradient(top, rgba(255,255,255,.2) 0%,rgba(0,0,0,.2) 100%); /* Chrome10+,Safari5.1+ */
+  		background: #eee -o-linear-gradient(top, rgba(255,255,255,.2) 0%,rgba(0,0,0,.2) 100%); /* Opera11.10+ */
+  		background: #eee -ms-linear-gradient(top, rgba(255,255,255,.2) 0%,rgba(0,0,0,.2) 100%); /* IE10+ */
+  		background: #eee linear-gradient(top, rgba(255,255,255,.2) 0%,rgba(0,0,0,.2) 100%); /* W3C */
+  	  border: 1px solid #aaa;
+  	  border-top: 1px solid #ccc;
+  	  border-left: 1px solid #ccc;
+  	  padding: 4px 12px;
+  	  -moz-border-radius: 3px;
+  	  -webkit-border-radius: 3px;
+  	  border-radius: 3px;
+  	  color: #444;
+  	  display: inline-block;
+  	  text-decoration: none;
+  	  text-shadow: 0 1px rgba(255, 255, 255, .75);
+  	  cursor: pointer;
+  	  margin-bottom: 20px;
+  	  line-height: 21px;
+  	}
+
+  	a.button:hover,
+  	button:hover,
+  	input[type="submit"]:hover,
+  	input[type="reset"]:hover,
+  	input[type="button"]:hover {
+  		color: #222;
+  		background: #ddd; /* Old browsers */
+  		background: #ddd -moz-linear-gradient(top, rgba(255,255,255,.3) 0%, rgba(0,0,0,.3) 100%); /* FF3.6+ */
+  		background: #ddd -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,.3)), color-stop(100%,rgba(0,0,0,.3))); /* Chrome,Safari4+ */
+  		background: #ddd -webkit-linear-gradient(top, rgba(255,255,255,.3) 0%,rgba(0,0,0,.3) 100%); /* Chrome10+,Safari5.1+ */
+  		background: #ddd -o-linear-gradient(top, rgba(255,255,255,.3) 0%,rgba(0,0,0,.3) 100%); /* Opera11.10+ */
+  		background: #ddd -ms-linear-gradient(top, rgba(255,255,255,.3) 0%,rgba(0,0,0,.3) 100%); /* IE10+ */
+  		background: #ddd linear-gradient(top, rgba(255,255,255,.3) 0%,rgba(0,0,0,.3) 100%); /* W3C */
+  	  border: 1px solid #888;
+  	  border-top: 1px solid #aaa;
+  	  border-left: 1px solid #aaa; }
+
+  	a.button:active,
+  	button:active,
+  	input[type="submit"]:active,
+  	input[type="reset"]:active,
+  	input[type="button"]:active {
+  		border: 1px solid #666;
+  		background: #ccc; /* Old browsers */
+  		background: #ccc -moz-linear-gradient(top, rgba(255,255,255,.35) 0%, rgba(10,10,10,.4) 100%); /* FF3.6+ */
+  		background: #ccc -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,.35)), color-stop(100%,rgba(10,10,10,.4))); /* Chrome,Safari4+ */
+  		background: #ccc -webkit-linear-gradient(top, rgba(255,255,255,.35) 0%,rgba(10,10,10,.4) 100%); /* Chrome10+,Safari5.1+ */
+  		background: #ccc -o-linear-gradient(top, rgba(255,255,255,.35) 0%,rgba(10,10,10,.4) 100%); /* Opera11.10+ */
+  		background: #ccc -ms-linear-gradient(top, rgba(255,255,255,.35) 0%,rgba(10,10,10,.4) 100%); /* IE10+ */
+  		background: #ccc linear-gradient(top, rgba(255,255,255,.35) 0%,rgba(10,10,10,.4) 100%); /* W3C */ }
+
+  	.button.full-width,
+  	button.full-width,
+  	input[type="submit"].full-width,
+  	input[type="reset"].full-width,
+  	input[type="button"].full-width {
+  		width: 100%;
+  		padding-left: 0 !important;
+  		padding-right: 0 !important;
+  		text-align: center; }
+    
+    .refresh {
+      line-height: 10px !important;
+      padding: 0px !important;
+      margin-bottom: 0px !important;
+    }
+    .updated {
+      margin-top: 5px;
+      margin-left: 5px;
+      position: absolute;
+    }
+    
+    .blocky {
+      background: #005858;
+      -moz-border-radius: 5px;
+  	  -webkit-border-radius: 5px;
+  	  border-radius: 5px;
+  	  padding: 10px;
+    }
+  </style>
+</head>
+<body class="content">
+<div><span class="logo"><a href="/">Wodleader</a></span><br/><span class="light small">A multi-event crossfit scoring app by <a href="http://emphaticsolutions.com"> Brian Doll</a>.<br/>Mobile friendly. Rock it.</span><hr/></div>
+<h1 class="white">TJ's Games</h1>
+<strong>When:</strong> Sunday October 23rd, 8AM - 5PM<br/>
+<strong>where:</strong> 7427 Redwood Blvd, Novato, Marin, California 94945<br/><br/>
+<p>Welcome to the 3rd annual TJ's Games!  The competition is open to atheltes of all ages and includes RX and scaled categories.</p>
+
+<h2 class="tightbottom">Current Leader Board:</h2>
+
+  <h4>Men's Modified</h4>
+    <div class="athlete">
+      <span class="rank">#1</span>
+      <span class="athlete-info">Mike Ferraro</span>
+      <br/>
+      <span class="pts">302.0pts <span class="info"> from Novato</span></span>
+    </div>
+  <h4>Men's RX</h4>
+    <div class="athlete">
+      <span class="rank">#1</span>
+      <span class="athlete-info">Brad Matsik</span>
+      <br/>
+      <span class="pts">7.5pts <span class="info"> from San Rafael</span></span>
+    </div>
+    <div class="athlete">
+      <span class="rank">#2</span>
+      <span class="athlete-info">Steve Morlock</span>
+      <br/>
+      <span class="pts">14.0pts <span class="info"> from San Rafael</span></span>
+    </div>
+    <div class="athlete">
+      <span class="rank">#3</span>
+      <span class="athlete-info">Doug Houlahan</span>
+      <br/>
+      <span class="pts">20.5pts <span class="info"> from Novato</span></span>
+    </div>
+    <div class="athlete">
+      <span class="rank">#4</span>
+      <span class="athlete-info">Neil Murphy</span>
+      <br/>
+      <span class="pts">21.0pts <span class="info"> from San Rafael</span></span>
+    </div>
+    <div class="athlete">
+      <span class="rank">#5</span>
+      <span class="athlete-info">Paul Hughes</span>
+      <br/>
+      <span class="pts">26.0pts <span class="info"> from San Rafael</span></span>
+    </div>
+    <div class="athlete">
+      <span class="rank">#6</span>
+      <span class="athlete-info">Hamilton Kipp</span>
+      <br/>
+      <span class="pts">29.0pts <span class="info"> from Corte Madera</span></span>
+    </div>
+    <div class="athlete">
+      <span class="rank">#7</span>
+      <span class="athlete-info">Matt Wadlington</span>
+      <br/>
+      <span class="pts">38.0pts <span class="info"> from San Rafael</span></span>
+    </div>
+    <div class="athlete">
+      <span class="rank">#8</span>
+      <span class="athlete-info">Beqir Gjoka</span>
+      <br/>
+      <span class="pts">39.5pts <span class="info"> from Novato</span></span>
+    </div>
+    <div class="athlete">
+      <span class="rank">#9</span>
+      <span class="athlete-info">Trevor Codington</span>
+      <br/>
+      <span class="pts">40.0pts <span class="info"> from Novato</span></span>
+    </div>
+    <div class="athlete">
+      <span class="rank">#10</span>
+      <span class="athlete-info">Gedge Knopf</span>
+      <br/>
+      <span class="pts">40.5pts <span class="info"> from San Rafael</span></span>
+    </div>
+    <div class="athlete">
+      <span class="rank">#11</span>
+      <span class="athlete-info">Charlie Raven</span>
+      <br/>
+      <span class="pts">44.5pts <span class="info"> from San Rafael</span></span>
+    </div>
+    <div class="athlete">
+      <span class="rank">#12</span>
+      <span class="athlete-info">Spencer Stuart</span>
+      <br/>
+      <span class="pts">46.5pts <span class="info"> from San Rafael</span></span>
+    </div>
+    <div class="athlete">
+      <span class="rank">#13</span>
+      <span class="athlete-info">Justin Derby</span>
+      <br/>
+      <span class="pts">47.0pts <span class="info"> from San Rafael/Mill Valley</span></span>
+    </div>
+    <div class="athlete">
+      <span class="rank">#14</span>
+      <span class="athlete-info">Radzmir Zalewski</span>
+      <br/>
+      <span class="pts">47.5pts <span class="info"> from Novato</span></span>
+    </div>
+    <div class="athlete">
+      <span class="rank">#15</span>
+      <span class="athlete-info">Michael Chamberlin</span>
+      <br/>
+      <span class="pts">49.5pts <span class="info"> from San Rafael</span></span>
+    </div>
+    <div class="athlete">
+      <span class="rank">#16</span>
+      <span class="athlete-info">Anthony Ostaland</span>
+      <br/>
+      <span class="pts">57.0pts <span class="info"> from Mill Valley</span></span>
+    </div>
+    <div class="athlete">
+      <span class="rank">#17</span>
+      <span class="athlete-info">Kevin Dempsey</span>
+      <br/>
+      <span class="pts">61.0pts <span class="info"> from Novato</span></span>
+    </div>
+    <div class="athlete">
+      <span class="rank">#18</span>
+      <span class="athlete-info">Dylan Grimes</span>
+      <br/>
+      <span class="pts">64.5pts <span class="info"> from San Rafael/Mill Valley</span></span>
+    </div>
+  <h4>Men's Scaled</h4>
+    <div class="athlete">
+      <span class="rank">#1</span>
+      <span class="athlete-info">Pete Stathis </span>
+      <br/>
+      <span class="pts">109.5pts <span class="info"> from Novato</span></span>
+    </div>
+    <div class="athlete">
+      <span class="rank">#2</span>
+      <span class="athlete-info">Josh Chassman</span>
+      <br/>
+      <span class="pts">115.5pts <span class="info"> from Novato</span></span>
+    </div>
+    <div class="athlete">
+      <span class="rank">#3</span>
+      <span class="athlete-info">Vince Baldino</span>
+      <br/>
+      <span class="pts">116.0pts <span class="info"> from Novato</span></span>
+    </div>
+    <div class="athlete">
+      <span class="rank">#4</span>
+      <span class="athlete-info">Brian Schroth</span>
+      <br/>
+      <span class="pts">120.0pts <span class="info"> from Novato</span></span>
+    </div>
+    <div class="athlete">
+      <span class="rank">#5</span>
+      <span class="athlete-info">Nick Goepp</span>
+      <br/>
+      <span class="pts">121.5pts <span class="info"> from San Rafael</span></span>
+    </div>
+    <div class="athlete">
+      <span class="rank">#6</span>
+      <span class="athlete-info">Greg Crane</span>
+      <br/>
+      <span class="pts">122.0pts <span class="info"> from San Rafael</span></span>
+    </div>
+    <div class="athlete">
+      <span class="rank">#7</span>
+      <span class="athlete-info">Geoff Mattiuzzo</span>
+      <br/>
+      <span class="pts">126.0pts <span class="info"> from San Rafael</span></span>
+    </div>
+    <div class="athlete">
+      <span class="rank">#8</span>
+      <span class="athlete-info">Nick Bartle</span>
+      <br/>
+      <span class="pts">130.5pts <span class="info"> from CrossFit Felton Gable</span></span>
+    </div>
+    <div class="athlete">
+      <span class="rank">#9</span>
+      <span class="athlete-info">Max Nivaud</span>
+      <br/>
+      <span class="pts">132.0pts <span class="info"> from San Rafael</span></span>
+    </div>
+    <div class="athlete">
+      <span class="rank">#10</span>
+      <span class="athlete-info">Jake Peterson</span>
+      <br/>
+      <span class="pts">134.5pts <span class="info"> from Corte Madera</span></span>
+    </div>
+    <div class="athlete">
+      <span class="rank">#11</span>
+      <span class="athlete-info">RIp Fowler</span>
+      <br/>
+      <span class="pts">136.0pts <span class="info"> from San Rafael</span></span>
+    </div>
+    <div class="athlete">
+      <span class="rank">#12</span>
+      <span class="athlete-info">Carlos Botas</span>
+      <br/>
+      <span class="pts">141.5pts <span class="info"> from Corte Madera</span></span>
+    </div>
+    <div class="athlete">
+      <span class="rank">#12</span>
+      <span class="athlete-info">Michael Gruen</span>
+      <br/>
+      <span class="pts">141.5pts <span class="info"> from Mill Valley</span></span>
+    </div>
+    <div class="athlete">
+      <span class="rank">#14</span>
+      <span class="athlete-info">Mike Harrosh</span>
+      <br/>
+      <span class="pts">148.5pts <span class="info"> from Mill Valley/Corte Madera</span></span>
+    </div>
+    <div class="athlete">
+      <span class="rank">#14</span>
+      <span class="athlete-info">Andy Moore</span>
+      <br/>
+      <span class="pts">148.5pts <span class="info"> from San Rafael</span></span>
+    </div>
+    <div class="athlete">
+      <span class="rank">#16</span>
+      <span class="athlete-info">Doug Kyle</span>
+      <br/>
+      <span class="pts">150.0pts <span class="info"> from San Rafael (TEAM Filly)</span></span>
+    </div>
+    <div class="athlete">
+      <span class="rank">#17</span>
+      <span class="athlete-info">Whitney Wyatt</span>
+      <br/>
+      <span class="pts">151.0pts <span class="info"> from San Rafael</span></span>
+    </div>
+    <div class="athlete">
+      <span class="rank">#18</span>
+      <span class="athlete-info">Jeremiah Mehler</span>
+      <br/>
+      <span class="pts">155.0pts <span class="info"> from San Rafael</span></span>
+    </div>
+    <div class="athlete">
+      <span class="rank">#19</span>
+      <span class="athlete-info">Eric Distad</span>
+      <br/>
+      <span class="pts">163.0pts <span class="info"> from San Rafael</span></span>
+    </div>
+    <div class="athlete">
+      <span class="rank">#20</span>
+      <span class="athlete-info">Jason Stirman</span>
+      <br/>
+      <span class="pts">165.0pts <span class="info"> from Mill Valley</span></span>
+    </div>
+    <div class="athlete">
+      <span class="rank">#21</span>
+      <span class="athlete-info">Anthony Lowenstein</span>
+      <br/>
+      <span class="pts">170.5pts <span class="info"> from Corte Madera</span></span>
+    </div>
+    <div class="athlete">
+      <span class="rank">#22</span>
+      <span class="athlete-info">Mark Mossing</span>
+      <br/>
+      <span class="pts">172.5pts <span class="info"> from San Rafael </span></span>
+    </div>
+  <h4>Women's Modified</h4>
+    <div class="athlete">
+      <span class="rank">#1</span>
+      <span class="athlete-info">Asunta Pacheco-Kennedy</span>
+      <br/>
+      <span class="pts">106.0pts <span class="info"> from Novato</span></span>
+    </div>
+    <div class="athlete">
+      <span class="rank">#2</span>
+      <span class="athlete-info">Sheryl Hausman</span>
+      <br/>
+      <span class="pts">106.5pts <span class="info"> from Corte Madera</span></span>
+    </div>
+    <div class="athlete">
+      <span class="rank">#3</span>
+      <span class="athlete-info">Whitney Ball</span>
+      <br/>
+      <span class="pts">109.0pts <span class="info"> from San Rafael</span></span>
+    </div>
+    <div class="athlete">
+      <span class="rank">#4</span>
+      <span class="athlete-info">Marianne Ringgenberg</span>
+      <br/>
+      <span class="pts">113.0pts <span class="info"> from Mill Valley</span></span>
+    </div>
+  <h4>Women's RX</h4>
+    <div class="athlete">
+      <span class="rank">#1</span>
+      <span class="athlete-info">Heather Flynn</span>
+      <br/>
+      <span class="pts">7.5pts <span class="info"> from San Rafael (TEAM Filly)</span></span>
+    </div>
+    <div class="athlete">
+      <span class="rank">#1</span>
+      <span class="athlete-info">Taylor Lawson</span>
+      <br/>
+      <span class="pts">7.5pts <span class="info"> from Novato</span></span>
+    </div>
+    <div class="athlete">
+      <span class="rank">#3</span>
+      <span class="athlete-info">Karen Boone</span>
+      <br/>
+      <span class="pts">21.5pts <span class="info"> from Novato</span></span>
+    </div>
+    <div class="athlete">
+      <span class="rank">#4</span>
+      <span class="athlete-info">Alicia Bannister</span>
+      <br/>
+      <span class="pts">24.0pts <span class="info"> from Novato</span></span>
+    </div>
+    <div class="athlete">
+      <span class="rank">#5</span>
+      <span class="athlete-info">Alicia Taylor</span>
+      <br/>
+      <span class="pts">25.0pts <span class="info"> from Novato</span></span>
+    </div>
+    <div class="athlete">
+      <span class="rank">#5</span>
+      <span class="athlete-info">Jennifer Ranghiasci</span>
+      <br/>
+      <span class="pts">25.0pts <span class="info"> from Novato</span></span>
+    </div>
+    <div class="athlete">
+      <span class="rank">#7</span>
+      <span class="athlete-info">Bridget Yates</span>
+      <br/>
+      <span class="pts">28.5pts <span class="info"> from San Rafael</span></span>
+    </div>
+    <div class="athlete">
+      <span class="rank">#8</span>
+      <span class="athlete-info">Grace Martin</span>
+      <br/>
+      <span class="pts">30.5pts <span class="info"> from Novato</span></span>
+    </div>
+    <div class="athlete">
+      <span class="rank">#9</span>
+      <span class="athlete-info">Megan Kaden</span>
+      <br/>
+      <span class="pts">32.5pts <span class="info"> from Mill Valley/Corte Madera/TEAM Filly</span></span>
+    </div>
+    <div class="athlete">
+      <span class="rank">#10</span>
+      <span class="athlete-info">Gia Kramer</span>
+      <br/>
+      <span class="pts">39.0pts <span class="info"> from Novato</span></span>
+    </div>
+    <div class="athlete">
+      <span class="rank">#11</span>
+      <span class="athlete-info">Sara Scott</span>
+      <br/>
+      <span class="pts">43.5pts <span class="info"> from Novato</span></span>
+    </div>
+  <h4>Women's Scaled</h4>
+    <div class="athlete">
+      <span class="rank">#1</span>
+      <span class="athlete-info">Kelly Reitz</span>
+      <br/>
+      <span class="pts">119.0pts <span class="info"> from Novato</span></span>
+    </div>
+    <div class="athlete">
+      <span class="rank">#1</span>
+      <span class="athlete-info">Sarah Buckley</span>
+      <br/>
+      <span class="pts">119.0pts <span class="info"> from San Rafael</span></span>
+    </div>
+    <div class="athlete">
+      <span class="rank">#3</span>
+      <span class="athlete-info">Linley Kaye</span>
+      <br/>
+      <span class="pts">122.0pts <span class="info"> from San Rafael</span></span>
+    </div>
+    <div class="athlete">
+      <span class="rank">#4</span>
+      <span class="athlete-info">Patty Flynn</span>
+      <br/>
+      <span class="pts">123.5pts <span class="info"> from San Rafael</span></span>
+    </div>
+    <div class="athlete">
+      <span class="rank">#5</span>
+      <span class="athlete-info">Terra Chamberlin</span>
+      <br/>
+      <span class="pts">124.5pts <span class="info"> from San Rafael</span></span>
+    </div>
+    <div class="athlete">
+      <span class="rank">#6</span>
+      <span class="athlete-info">Kathy Kay</span>
+      <br/>
+      <span class="pts">131.5pts <span class="info"> from Novato</span></span>
+    </div>
+    <div class="athlete">
+      <span class="rank">#7</span>
+      <span class="athlete-info">Casey Daigle</span>
+      <br/>
+      <span class="pts">132.0pts <span class="info"> from San Rafael</span></span>
+    </div>
+    <div class="athlete">
+      <span class="rank">#8</span>
+      <span class="athlete-info">Heidi George</span>
+      <br/>
+      <span class="pts">137.5pts <span class="info"> from San Rafael</span></span>
+    </div>
+    <div class="athlete">
+      <span class="rank">#9</span>
+      <span class="athlete-info">Katie Baldino</span>
+      <br/>
+      <span class="pts">139.5pts <span class="info"> from Novato</span></span>
+    </div>
+    <div class="athlete">
+      <span class="rank">#9</span>
+      <span class="athlete-info">Lisa Travaglini</span>
+      <br/>
+      <span class="pts">139.5pts <span class="info"> from San Rafael</span></span>
+    </div>
+    <div class="athlete">
+      <span class="rank">#11</span>
+      <span class="athlete-info">Amy Jones</span>
+      <br/>
+      <span class="pts">140.5pts <span class="info"> from San Rafael</span></span>
+    </div>
+    <div class="athlete">
+      <span class="rank">#12</span>
+      <span class="athlete-info">Julie Shepherd</span>
+      <br/>
+      <span class="pts">141.0pts <span class="info"> from Novato</span></span>
+    </div>
+    <div class="athlete">
+      <span class="rank">#13</span>
+      <span class="athlete-info">Kelly Schroth</span>
+      <br/>
+      <span class="pts">144.0pts <span class="info"> from Novato</span></span>
+    </div>
+    <div class="athlete">
+      <span class="rank">#14</span>
+      <span class="athlete-info">Lisa Smith</span>
+      <br/>
+      <span class="pts">146.0pts <span class="info"> from Mill Valley (TEAM Filly)</span></span>
+    </div>
+    <div class="athlete">
+      <span class="rank">#15</span>
+      <span class="athlete-info">Denise Figone</span>
+      <br/>
+      <span class="pts">152.0pts <span class="info"> from Novato (TEAM Filly)</span></span>
+    </div>
+    <div class="athlete">
+      <span class="rank">#16</span>
+      <span class="athlete-info">Kc Vlah</span>
+      <br/>
+      <span class="pts">153.0pts <span class="info"> from San Rafael</span></span>
+    </div>
+    <div class="athlete">
+      <span class="rank">#17</span>
+      <span class="athlete-info">Susan Crane</span>
+      <br/>
+      <span class="pts">156.0pts <span class="info"> from Corte Madera/Mill Valley</span></span>
+    </div>
+    <div class="athlete">
+      <span class="rank">#18</span>
+      <span class="athlete-info">Jennifer Gauna</span>
+      <br/>
+      <span class="pts">160.0pts <span class="info"> from San Rafael</span></span>
+    </div>
+    <div class="athlete">
+      <span class="rank">#19</span>
+      <span class="athlete-info">Kielty Nivaud</span>
+      <br/>
+      <span class="pts">161.0pts <span class="info"> from OUTfit/San Rafael</span></span>
+    </div>
+    <div class="athlete">
+      <span class="rank">#20</span>
+      <span class="athlete-info">Rae Turner</span>
+      <br/>
+      <span class="pts">168.0pts <span class="info"> from Novato</span></span>
+    </div>
+    <div class="athlete">
+      <span class="rank">#21</span>
+      <span class="athlete-info">Fabiana Degenova</span>
+      <br/>
+      <span class="pts">168.5pts <span class="info"> from Corte Madera/Mill Valley</span></span>
+    </div>
+    <div class="athlete">
+      <span class="rank">#22</span>
+      <span class="athlete-info">Marci Rhodes</span>
+      <br/>
+      <span class="pts">171.0pts <span class="info"> from Novato</span></span>
+    </div>
+    <div class="athlete">
+      <span class="rank">#23</span>
+      <span class="athlete-info">Jennifer Luttrell</span>
+      <br/>
+      <span class="pts">175.0pts <span class="info"> from San Rafael </span></span>
+    </div>
+    <div class="athlete">
+      <span class="rank">#24</span>
+      <span class="athlete-info">Alexia Moore</span>
+      <br/>
+      <span class="pts">178.0pts <span class="info"> from San Rafael </span></span>
+    </div>
+    <div class="athlete">
+      <span class="rank">#25</span>
+      <span class="athlete-info">Linda White</span>
+      <br/>
+      <span class="pts">180.0pts <span class="info"> from San Rafael</span></span>
+    </div>
+    <div class="athlete">
+      <span class="rank">#25</span>
+      <span class="athlete-info">Jessica Gardner</span>
+      <br/>
+      <span class="pts">180.0pts <span class="info"> from Novato</span></span>
+    </div>
+    <div class="athlete">
+      <span class="rank">#27</span>
+      <span class="athlete-info">Kelley Golde</span>
+      <br/>
+      <span class="pts">186.0pts <span class="info"> from Novato</span></span>
+    </div>
+    <div class="athlete">
+      <span class="rank">#28</span>
+      <span class="athlete-info">Kris Mansbridge</span>
+      <br/>
+      <span class="pts">197.5pts <span class="info"> from San Rafael (TEAM Filly)</span></span>
+    </div>
+    <div class="athlete">
+      <span class="rank">#29</span>
+      <span class="athlete-info">Olivia Stoddard</span>
+      <br/>
+      <span class="pts">198.0pts <span class="info"> from Novato</span></span>
+    </div>
+    <div class="athlete">
+      <span class="rank">#30</span>
+      <span class="athlete-info">Kandi Blomquist</span>
+      <br/>
+      <span class="pts">203.0pts <span class="info"> from Novato (TEAM Filly)</span></span>
+    </div>
+    <div class="athlete">
+      <span class="rank">#31</span>
+      <span class="athlete-info">Elisa Reitsch</span>
+      <br/>
+      <span class="pts">205.0pts <span class="info"> from Mill Valley</span></span>
+    </div>
+    <div class="athlete">
+      <span class="rank">#32</span>
+      <span class="athlete-info">Marla Murphy</span>
+      <br/>
+      <span class="pts">205.5pts <span class="info"> from San Rafael</span></span>
+    </div>
+    <div class="athlete">
+      <span class="rank">#33</span>
+      <span class="athlete-info">Samantha Lief</span>
+      <br/>
+      <span class="pts">206.0pts <span class="info"> from Novato</span></span>
+    </div>
+    <div class="athlete">
+      <span class="rank">#34</span>
+      <span class="athlete-info">Chizzie Brown</span>
+      <br/>
+      <span class="pts">211.0pts <span class="info"> from San Rafael</span></span>
+    </div>
+    <div class="athlete">
+      <span class="rank">#35</span>
+      <span class="athlete-info">Gina Wyatt</span>
+      <br/>
+      <span class="pts">214.0pts <span class="info"> from San Rafael</span></span>
+    </div>
+    <div class="athlete">
+      <span class="rank">#36</span>
+      <span class="athlete-info">Nicole McConneloug</span>
+      <br/>
+      <span class="pts">216.0pts <span class="info"></span></span>
+    </div>
+<br/>
+<h2>Events:</h2>
+  <h3>WOD #1</h3>
+  <p><pre class="orange">3 Rounds:
+ * Run Loop (440m)
+ * 5 KB raises 35/44 (Scaled 18/26)
+ * 12 thrusters 75/115	(Scaled 45/75)
+
+15 Minute time cap</pre></p>
+      <h4>Men's Modified</h4>
+        <div class="athlete">
+          <span class="rank">#1</span>
+          <span class="athlete-info">Mike Ferraro</span>
+          <br/>
+          <span class="pts">10:53 <span class="info"> from Novato</span></span>
+        </div>
+      <h4>Men's RX</h4>
+        <div class="athlete">
+          <span class="rank">#1</span>
+          <span class="athlete-info">Steve Morlock</span>
+          <br/>
+          <span class="pts">9:56 <span class="info"> from San Rafael</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#2</span>
+          <span class="athlete-info">Doug Houlahan</span>
+          <br/>
+          <span class="pts">10:08 <span class="info"> from Novato</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#3</span>
+          <span class="athlete-info">Brad Matsik</span>
+          <br/>
+          <span class="pts">10:47 <span class="info"> from San Rafael</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#4</span>
+          <span class="athlete-info">Matt Wadlington</span>
+          <br/>
+          <span class="pts">10:49 <span class="info"> from San Rafael</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#5</span>
+          <span class="athlete-info">Anthony Ostaland</span>
+          <br/>
+          <span class="pts">11:17 <span class="info"> from Mill Valley</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#6</span>
+          <span class="athlete-info">Paul Hughes</span>
+          <br/>
+          <span class="pts">11:37 <span class="info"> from San Rafael</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#7</span>
+          <span class="athlete-info">Neil Murphy</span>
+          <br/>
+          <span class="pts">11:49 <span class="info"> from San Rafael</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#8</span>
+          <span class="athlete-info">Trevor Codington</span>
+          <br/>
+          <span class="pts">12:43 <span class="info"> from Novato</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#9</span>
+          <span class="athlete-info">Justin Derby</span>
+          <br/>
+          <span class="pts">13:00 <span class="info"> from San Rafael/Mill Valley</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#10</span>
+          <span class="athlete-info">Beqir Gjoka</span>
+          <br/>
+          <span class="pts">13:16 <span class="info"> from Novato</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#11</span>
+          <span class="athlete-info">Hamilton Kipp</span>
+          <br/>
+          <span class="pts">13:42 <span class="info"> from Corte Madera</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#12</span>
+          <span class="athlete-info">Gedge Knopf</span>
+          <br/>
+          <span class="pts">15:01 <span class="info"> from San Rafael</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#12</span>
+          <span class="athlete-info">Radzmir Zalewski</span>
+          <br/>
+          <span class="pts">15:01 <span class="info"> from Novato</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#14</span>
+          <span class="athlete-info">Spencer Stuart</span>
+          <br/>
+          <span class="pts">15:02 <span class="info"> from San Rafael</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#14</span>
+          <span class="athlete-info">Michael Chamberlin</span>
+          <br/>
+          <span class="pts">15:02 <span class="info"> from San Rafael</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#16</span>
+          <span class="athlete-info">Charlie Raven</span>
+          <br/>
+          <span class="pts">15:03 <span class="info"> from San Rafael</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#17</span>
+          <span class="athlete-info">Kevin Dempsey</span>
+          <br/>
+          <span class="pts">15:04 <span class="info"> from Novato</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#18</span>
+          <span class="athlete-info">Dylan Grimes</span>
+          <br/>
+          <span class="pts">15:05 <span class="info"> from San Rafael/Mill Valley</span></span>
+        </div>
+      <h4>Men's Scaled</h4>
+        <div class="athlete">
+          <span class="rank">#1</span>
+          <span class="athlete-info">Jake Peterson</span>
+          <br/>
+          <span class="pts">9:12 <span class="info"> from Corte Madera</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#2</span>
+          <span class="athlete-info">Brian Schroth</span>
+          <br/>
+          <span class="pts">9:19 <span class="info"> from Novato</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#3</span>
+          <span class="athlete-info">Pete Stathis </span>
+          <br/>
+          <span class="pts">9:33 <span class="info"> from Novato</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#4</span>
+          <span class="athlete-info">Michael Gruen</span>
+          <br/>
+          <span class="pts">9:47 <span class="info"> from Mill Valley</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#5</span>
+          <span class="athlete-info">Geoff Mattiuzzo</span>
+          <br/>
+          <span class="pts">9:49 <span class="info"> from San Rafael</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#6</span>
+          <span class="athlete-info">Vince Baldino</span>
+          <br/>
+          <span class="pts">9:55 <span class="info"> from Novato</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#7</span>
+          <span class="athlete-info">Josh Chassman</span>
+          <br/>
+          <span class="pts">10:08 <span class="info"> from Novato</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#8</span>
+          <span class="athlete-info">Max Nivaud</span>
+          <br/>
+          <span class="pts">10:15 <span class="info"> from San Rafael</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#9</span>
+          <span class="athlete-info">Greg Crane</span>
+          <br/>
+          <span class="pts">10:17 <span class="info"> from San Rafael</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#10</span>
+          <span class="athlete-info">Nick Bartle</span>
+          <br/>
+          <span class="pts">10:23 <span class="info"> from CrossFit Felton Gable</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#11</span>
+          <span class="athlete-info">RIp Fowler</span>
+          <br/>
+          <span class="pts">10:24 <span class="info"> from San Rafael</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#12</span>
+          <span class="athlete-info">Nick Goepp</span>
+          <br/>
+          <span class="pts">10:46 <span class="info"> from San Rafael</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#13</span>
+          <span class="athlete-info">Carlos Botas</span>
+          <br/>
+          <span class="pts">11:07 <span class="info"> from Corte Madera</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#14</span>
+          <span class="athlete-info">Jeremiah Mehler</span>
+          <br/>
+          <span class="pts">11:37 <span class="info"> from San Rafael</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#15</span>
+          <span class="athlete-info">Whitney Wyatt</span>
+          <br/>
+          <span class="pts">11:39 <span class="info"> from San Rafael</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#16</span>
+          <span class="athlete-info">Andy Moore</span>
+          <br/>
+          <span class="pts">12:00 <span class="info"> from San Rafael</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#17</span>
+          <span class="athlete-info">Mike Harrosh</span>
+          <br/>
+          <span class="pts">12:08 <span class="info"> from Mill Valley/Corte Madera</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#18</span>
+          <span class="athlete-info">Doug Kyle</span>
+          <br/>
+          <span class="pts">12:29 <span class="info"> from San Rafael (TEAM Filly)</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#19</span>
+          <span class="athlete-info">Jason Stirman</span>
+          <br/>
+          <span class="pts">12:45 <span class="info"> from Mill Valley</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#20</span>
+          <span class="athlete-info">Anthony Lowenstein</span>
+          <br/>
+          <span class="pts">13:10 <span class="info"> from Corte Madera</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#21</span>
+          <span class="athlete-info">Eric Distad</span>
+          <br/>
+          <span class="pts">13:52 <span class="info"> from San Rafael</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#22</span>
+          <span class="athlete-info">Mark Mossing</span>
+          <br/>
+          <span class="pts">14:29 <span class="info"> from San Rafael </span></span>
+        </div>
+      <h4>Women's Modified</h4>
+        <div class="athlete">
+          <span class="rank">#1</span>
+          <span class="athlete-info">Asunta Pacheco-Kennedy</span>
+          <br/>
+          <span class="pts">10:27 <span class="info"> from Novato</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#2</span>
+          <span class="athlete-info">Sheryl Hausman</span>
+          <br/>
+          <span class="pts">13:07 <span class="info"> from Corte Madera</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#3</span>
+          <span class="athlete-info">Whitney Ball</span>
+          <br/>
+          <span class="pts">13:21 <span class="info"> from San Rafael</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#4</span>
+          <span class="athlete-info">Marianne Ringgenberg</span>
+          <br/>
+          <span class="pts">14:03 <span class="info"> from Mill Valley</span></span>
+        </div>
+      <h4>Women's RX</h4>
+        <div class="athlete">
+          <span class="rank">#1</span>
+          <span class="athlete-info">Taylor Lawson</span>
+          <br/>
+          <span class="pts">9:52 <span class="info"> from Novato</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#2</span>
+          <span class="athlete-info">Heather Flynn</span>
+          <br/>
+          <span class="pts">11:14 <span class="info"> from San Rafael (TEAM Filly)</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#3</span>
+          <span class="athlete-info">Jennifer Ranghiasci</span>
+          <br/>
+          <span class="pts">11:28 <span class="info"> from Novato</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#4</span>
+          <span class="athlete-info">Karen Boone</span>
+          <br/>
+          <span class="pts">11:42 <span class="info"> from Novato</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#5</span>
+          <span class="athlete-info">Bridget Yates</span>
+          <br/>
+          <span class="pts">12:41 <span class="info"> from San Rafael</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#6</span>
+          <span class="athlete-info">Alicia Bannister</span>
+          <br/>
+          <span class="pts">13:30 <span class="info"> from Novato</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#7</span>
+          <span class="athlete-info">Alicia Taylor</span>
+          <br/>
+          <span class="pts">14:01 <span class="info"> from Novato</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#8</span>
+          <span class="athlete-info">Grace Martin</span>
+          <br/>
+          <span class="pts">15:01 <span class="info"> from Novato</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#9</span>
+          <span class="athlete-info">Megan Kaden</span>
+          <br/>
+          <span class="pts">15:02 <span class="info"> from Mill Valley/Corte Madera/TEAM Filly</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#10</span>
+          <span class="athlete-info">Sara Scott</span>
+          <br/>
+          <span class="pts">15:03 <span class="info"> from Novato</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#11</span>
+          <span class="athlete-info">Gia Kramer</span>
+          <br/>
+          <span class="pts">15:04 <span class="info"> from Novato</span></span>
+        </div>
+      <h4>Women's Scaled</h4>
+        <div class="athlete">
+          <span class="rank">#1</span>
+          <span class="athlete-info">Sarah Buckley</span>
+          <br/>
+          <span class="pts">9:00 <span class="info"> from San Rafael</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#2</span>
+          <span class="athlete-info">Kelly Reitz</span>
+          <br/>
+          <span class="pts">9:22 <span class="info"> from Novato</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#3</span>
+          <span class="athlete-info">Kelly Schroth</span>
+          <br/>
+          <span class="pts">9:27 <span class="info"> from Novato</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#4</span>
+          <span class="athlete-info">Julie Shepherd</span>
+          <br/>
+          <span class="pts">9:34 <span class="info"> from Novato</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#5</span>
+          <span class="athlete-info">Linley Kaye</span>
+          <br/>
+          <span class="pts">9:39 <span class="info"> from San Rafael</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#6</span>
+          <span class="athlete-info">Kc Vlah</span>
+          <br/>
+          <span class="pts">9:54 <span class="info"> from San Rafael</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#7</span>
+          <span class="athlete-info">Casey Daigle</span>
+          <br/>
+          <span class="pts">10:01 <span class="info"> from San Rafael</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#8</span>
+          <span class="athlete-info">Kielty Nivaud</span>
+          <br/>
+          <span class="pts">10:03 <span class="info"> from OUTfit/San Rafael</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#8</span>
+          <span class="athlete-info">Heidi George</span>
+          <br/>
+          <span class="pts">10:03 <span class="info"> from San Rafael</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#10</span>
+          <span class="athlete-info">Terra Chamberlin</span>
+          <br/>
+          <span class="pts">10:07 <span class="info"> from San Rafael</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#11</span>
+          <span class="athlete-info">Katie Baldino</span>
+          <br/>
+          <span class="pts">10:09 <span class="info"> from Novato</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#12</span>
+          <span class="athlete-info">Amy Jones</span>
+          <br/>
+          <span class="pts">10:16 <span class="info"> from San Rafael</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#12</span>
+          <span class="athlete-info">Jennifer Gauna</span>
+          <br/>
+          <span class="pts">10:16 <span class="info"> from San Rafael</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#14</span>
+          <span class="athlete-info">Denise Figone</span>
+          <br/>
+          <span class="pts">10:19 <span class="info"> from Novato (TEAM Filly)</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#15</span>
+          <span class="athlete-info">Fabiana Degenova</span>
+          <br/>
+          <span class="pts">10:32 <span class="info"> from Corte Madera/Mill Valley</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#16</span>
+          <span class="athlete-info">Patty Flynn</span>
+          <br/>
+          <span class="pts">10:33 <span class="info"> from San Rafael</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#17</span>
+          <span class="athlete-info">Kathy Kay</span>
+          <br/>
+          <span class="pts">10:44 <span class="info"> from Novato</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#18</span>
+          <span class="athlete-info">Lisa Travaglini</span>
+          <br/>
+          <span class="pts">10:48 <span class="info"> from San Rafael</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#19</span>
+          <span class="athlete-info">Kelley Golde</span>
+          <br/>
+          <span class="pts">10:53 <span class="info"> from Novato</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#20</span>
+          <span class="athlete-info">Marci Rhodes</span>
+          <br/>
+          <span class="pts">11:03 <span class="info"> from Novato</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#21</span>
+          <span class="athlete-info">Lisa Smith</span>
+          <br/>
+          <span class="pts">11:11 <span class="info"> from Mill Valley (TEAM Filly)</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#22</span>
+          <span class="athlete-info">Alexia Moore</span>
+          <br/>
+          <span class="pts">11:15 <span class="info"> from San Rafael </span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#23</span>
+          <span class="athlete-info">Rae Turner</span>
+          <br/>
+          <span class="pts">11:19 <span class="info"> from Novato</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#24</span>
+          <span class="athlete-info">Susan Crane</span>
+          <br/>
+          <span class="pts">11:40 <span class="info"> from Corte Madera/Mill Valley</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#25</span>
+          <span class="athlete-info">Jessica Gardner</span>
+          <br/>
+          <span class="pts">11:45 <span class="info"> from Novato</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#26</span>
+          <span class="athlete-info">Marla Murphy</span>
+          <br/>
+          <span class="pts">12:27 <span class="info"> from San Rafael</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#27</span>
+          <span class="athlete-info">Nicole McConneloug</span>
+          <br/>
+          <span class="pts">12:28 <span class="info"></span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#28</span>
+          <span class="athlete-info">Jennifer Luttrell</span>
+          <br/>
+          <span class="pts">12:32 <span class="info"> from San Rafael </span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#29</span>
+          <span class="athlete-info">Linda White</span>
+          <br/>
+          <span class="pts">12:36 <span class="info"> from San Rafael</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#30</span>
+          <span class="athlete-info">Elisa Reitsch</span>
+          <br/>
+          <span class="pts">13:30 <span class="info"> from Mill Valley</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#31</span>
+          <span class="athlete-info">Chizzie Brown</span>
+          <br/>
+          <span class="pts">13:33 <span class="info"> from San Rafael</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#32</span>
+          <span class="athlete-info">Olivia Stoddard</span>
+          <br/>
+          <span class="pts">13:47 <span class="info"> from Novato</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#33</span>
+          <span class="athlete-info">Gina Wyatt</span>
+          <br/>
+          <span class="pts">13:57 <span class="info"> from San Rafael</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#34</span>
+          <span class="athlete-info">Samantha Lief</span>
+          <br/>
+          <span class="pts">14:35 <span class="info"> from Novato</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#35</span>
+          <span class="athlete-info">Kandi Blomquist</span>
+          <br/>
+          <span class="pts">14:41 <span class="info"> from Novato (TEAM Filly)</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#36</span>
+          <span class="athlete-info">Kris Mansbridge</span>
+          <br/>
+          <span class="pts">15:01 <span class="info"> from San Rafael (TEAM Filly)</span></span>
+        </div>
+  <br/><br/>
+  <h3>WOD #2</h3>
+  <p><pre class="orange">4 stations with 30-second rest to rotate between stations
+
+ * 1 Rep Max Full Squat Snatch in 3 min (Scaled can do a power
+snatch to OHS)
+
+ * Weighted Pullup in 2 min (Scaled is # of pullups
+
+ * Pistols—alternating legs in 1 min (Scaled is # of air squats
+
+ * Handstand Pushups (kipping allowed) in 1 min (Scaled is # of situps
+
+SCORE is total pounds plus total reps
+
+Note: If you cannot do a movement you get a zero for that station, but your
+score is the total pounds and reps added together. So, if you are Rx’d
+but cannot do a handstand pushup, you would get a zero for that
+station and your score would be your pounds on the snatch plus your
+pounds on the weighted pullup, plus your pistol reps. If you are
+scaled and cannot do pullups, you would get a zero on that station.
+If you choose to modify, you could do jumping pullups but would then
+not be eligible for a prize in the scaled division.
+</pre></p>
+      <h4>Men's Modified</h4>
+        <div class="athlete">
+          <span class="rank">#1</span>
+          <span class="athlete-info">Mike Ferraro</span>
+          <br/>
+          <span class="pts">140 <span class="info"> from Novato</span></span>
+        </div>
+      <h4>Men's RX</h4>
+        <div class="athlete">
+          <span class="rank">#1</span>
+          <span class="athlete-info">Neil Murphy</span>
+          <br/>
+          <span class="pts">277 <span class="info"> from San Rafael</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#2</span>
+          <span class="athlete-info">Brad Matsik</span>
+          <br/>
+          <span class="pts">270 <span class="info"> from San Rafael</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#3</span>
+          <span class="athlete-info">Hamilton Kipp</span>
+          <br/>
+          <span class="pts">267 <span class="info"> from Corte Madera</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#4</span>
+          <span class="athlete-info">Doug Houlahan</span>
+          <br/>
+          <span class="pts">258 <span class="info"> from Novato</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#5</span>
+          <span class="athlete-info">Charlie Raven</span>
+          <br/>
+          <span class="pts">249 <span class="info"> from San Rafael</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#6</span>
+          <span class="athlete-info">Gedge Knopf</span>
+          <br/>
+          <span class="pts">244 <span class="info"> from San Rafael</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#6</span>
+          <span class="athlete-info">Steve Morlock</span>
+          <br/>
+          <span class="pts">244 <span class="info"> from San Rafael</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#8</span>
+          <span class="athlete-info">Trevor Codington</span>
+          <br/>
+          <span class="pts">238 <span class="info"> from Novato</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#9</span>
+          <span class="athlete-info">Spencer Stuart</span>
+          <br/>
+          <span class="pts">220 <span class="info"> from San Rafael</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#10</span>
+          <span class="athlete-info">Paul Hughes</span>
+          <br/>
+          <span class="pts">211 <span class="info"> from San Rafael</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#11</span>
+          <span class="athlete-info">Radzmir Zalewski</span>
+          <br/>
+          <span class="pts">205 <span class="info"> from Novato</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#12</span>
+          <span class="athlete-info">Beqir Gjoka</span>
+          <br/>
+          <span class="pts">201 <span class="info"> from Novato</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#13</span>
+          <span class="athlete-info">Justin Derby</span>
+          <br/>
+          <span class="pts">195 <span class="info"> from San Rafael/Mill Valley</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#14</span>
+          <span class="athlete-info">Michael Chamberlin</span>
+          <br/>
+          <span class="pts">184 <span class="info"> from San Rafael</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#15</span>
+          <span class="athlete-info">Matt Wadlington</span>
+          <br/>
+          <span class="pts">179 <span class="info"> from San Rafael</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#16</span>
+          <span class="athlete-info">Kevin Dempsey</span>
+          <br/>
+          <span class="pts">151 <span class="info"> from Novato</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#17</span>
+          <span class="athlete-info">Dylan Grimes</span>
+          <br/>
+          <span class="pts">118.5 <span class="info"> from San Rafael/Mill Valley</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#18</span>
+          <span class="athlete-info">Anthony Ostaland</span>
+          <br/>
+          <span class="pts"> <span class="info"> from Mill Valley</span></span>
+        </div>
+      <h4>Men's Scaled</h4>
+        <div class="athlete">
+          <span class="rank">#1</span>
+          <span class="athlete-info">Vince Baldino</span>
+          <br/>
+          <span class="pts">247 <span class="info"> from Novato</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#2</span>
+          <span class="athlete-info">Pete Stathis </span>
+          <br/>
+          <span class="pts">244 <span class="info"> from Novato</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#3</span>
+          <span class="athlete-info">Greg Crane</span>
+          <br/>
+          <span class="pts">243 <span class="info"> from San Rafael</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#4</span>
+          <span class="athlete-info">Josh Chassman</span>
+          <br/>
+          <span class="pts">241 <span class="info"> from Novato</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#5</span>
+          <span class="athlete-info">RIp Fowler</span>
+          <br/>
+          <span class="pts">240 <span class="info"> from San Rafael</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#6</span>
+          <span class="athlete-info">Nick Goepp</span>
+          <br/>
+          <span class="pts">237 <span class="info"> from San Rafael</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#7</span>
+          <span class="athlete-info">Nick Bartle</span>
+          <br/>
+          <span class="pts">235 <span class="info"> from CrossFit Felton Gable</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#8</span>
+          <span class="athlete-info">Mike Harrosh</span>
+          <br/>
+          <span class="pts">230 <span class="info"> from Mill Valley/Corte Madera</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#9</span>
+          <span class="athlete-info">Brian Schroth</span>
+          <br/>
+          <span class="pts">229 <span class="info"> from Novato</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#10</span>
+          <span class="athlete-info">Geoff Mattiuzzo</span>
+          <br/>
+          <span class="pts">224 <span class="info"> from San Rafael</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#11</span>
+          <span class="athlete-info">Doug Kyle</span>
+          <br/>
+          <span class="pts">217 <span class="info"> from San Rafael (TEAM Filly)</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#11</span>
+          <span class="athlete-info">Michael Gruen</span>
+          <br/>
+          <span class="pts">217 <span class="info"> from Mill Valley</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#13</span>
+          <span class="athlete-info">Carlos Botas</span>
+          <br/>
+          <span class="pts">214 <span class="info"> from Corte Madera</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#14</span>
+          <span class="athlete-info">Max Nivaud</span>
+          <br/>
+          <span class="pts">212 <span class="info"> from San Rafael</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#15</span>
+          <span class="athlete-info">Andy Moore</span>
+          <br/>
+          <span class="pts">211 <span class="info"> from San Rafael</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#16</span>
+          <span class="athlete-info">Jeremiah Mehler</span>
+          <br/>
+          <span class="pts">208 <span class="info"> from San Rafael</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#17</span>
+          <span class="athlete-info">Jake Peterson</span>
+          <br/>
+          <span class="pts">206 <span class="info"> from Corte Madera</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#18</span>
+          <span class="athlete-info">Jason Stirman</span>
+          <br/>
+          <span class="pts">196 <span class="info"> from Mill Valley</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#19</span>
+          <span class="athlete-info">Whitney Wyatt</span>
+          <br/>
+          <span class="pts">193 <span class="info"> from San Rafael</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#20</span>
+          <span class="athlete-info">Eric Distad</span>
+          <br/>
+          <span class="pts">191 <span class="info"> from San Rafael</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#21</span>
+          <span class="athlete-info">Mark Mossing</span>
+          <br/>
+          <span class="pts">188 <span class="info"> from San Rafael </span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#22</span>
+          <span class="athlete-info">Anthony Lowenstein</span>
+          <br/>
+          <span class="pts">175 <span class="info"> from Corte Madera</span></span>
+        </div>
+      <h4>Women's Modified</h4>
+        <div class="athlete">
+          <span class="rank">#1</span>
+          <span class="athlete-info">Asunta Pacheco-Kennedy</span>
+          <br/>
+          <span class="pts">132 <span class="info"> from Novato</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#2</span>
+          <span class="athlete-info">Whitney Ball</span>
+          <br/>
+          <span class="pts">129 <span class="info"> from San Rafael</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#3</span>
+          <span class="athlete-info">Sheryl Hausman</span>
+          <br/>
+          <span class="pts">117 <span class="info"> from Corte Madera</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#4</span>
+          <span class="athlete-info">Marianne Ringgenberg</span>
+          <br/>
+          <span class="pts">98 <span class="info"> from Mill Valley</span></span>
+        </div>
+      <h4>Women's RX</h4>
+        <div class="athlete">
+          <span class="rank">#1</span>
+          <span class="athlete-info">Taylor Lawson</span>
+          <br/>
+          <span class="pts">178 <span class="info"> from Novato</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#2</span>
+          <span class="athlete-info">Heather Flynn</span>
+          <br/>
+          <span class="pts">163 <span class="info"> from San Rafael (TEAM Filly)</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#3</span>
+          <span class="athlete-info">Alicia Bannister</span>
+          <br/>
+          <span class="pts">159 <span class="info"> from Novato</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#4</span>
+          <span class="athlete-info">Alicia Taylor</span>
+          <br/>
+          <span class="pts">151.5 <span class="info"> from Novato</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#5</span>
+          <span class="athlete-info">Grace Martin</span>
+          <br/>
+          <span class="pts">146 <span class="info"> from Novato</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#6</span>
+          <span class="athlete-info">Jennifer Ranghiasci</span>
+          <br/>
+          <span class="pts">143 <span class="info"> from Novato</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#7</span>
+          <span class="athlete-info">Megan Kaden</span>
+          <br/>
+          <span class="pts">130 <span class="info"> from Mill Valley/Corte Madera/TEAM Filly</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#7</span>
+          <span class="athlete-info">Karen Boone</span>
+          <br/>
+          <span class="pts">130 <span class="info"> from Novato</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#9</span>
+          <span class="athlete-info">Gia Kramer</span>
+          <br/>
+          <span class="pts">126 <span class="info"> from Novato</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#10</span>
+          <span class="athlete-info">Bridget Yates</span>
+          <br/>
+          <span class="pts">113 <span class="info"> from San Rafael</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#11</span>
+          <span class="athlete-info">Sara Scott</span>
+          <br/>
+          <span class="pts">112 <span class="info"> from Novato</span></span>
+        </div>
+      <h4>Women's Scaled</h4>
+        <div class="athlete">
+          <span class="rank">#1</span>
+          <span class="athlete-info">Patty Flynn</span>
+          <br/>
+          <span class="pts">198 <span class="info"> from San Rafael</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#2</span>
+          <span class="athlete-info">Linley Kaye</span>
+          <br/>
+          <span class="pts">196 <span class="info"> from San Rafael</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#3</span>
+          <span class="athlete-info">Terra Chamberlin</span>
+          <br/>
+          <span class="pts">194 <span class="info"> from San Rafael</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#4</span>
+          <span class="athlete-info">Kelly Reitz</span>
+          <br/>
+          <span class="pts">189 <span class="info"> from Novato</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#5</span>
+          <span class="athlete-info">Heidi George</span>
+          <br/>
+          <span class="pts">187 <span class="info"> from San Rafael</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#6</span>
+          <span class="athlete-info">Kathy Kay</span>
+          <br/>
+          <span class="pts">185 <span class="info"> from Novato</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#7</span>
+          <span class="athlete-info">Sarah Buckley</span>
+          <br/>
+          <span class="pts">184 <span class="info"> from San Rafael</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#7</span>
+          <span class="athlete-info">Casey Daigle</span>
+          <br/>
+          <span class="pts">184 <span class="info"> from San Rafael</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#9</span>
+          <span class="athlete-info">Lisa Smith</span>
+          <br/>
+          <span class="pts">182 <span class="info"> from Mill Valley (TEAM Filly)</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#10</span>
+          <span class="athlete-info">Denise Figone</span>
+          <br/>
+          <span class="pts">175 <span class="info"> from Novato (TEAM Filly)</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#11</span>
+          <span class="athlete-info">Kris Mansbridge</span>
+          <br/>
+          <span class="pts">172 <span class="info"> from San Rafael (TEAM Filly)</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#12</span>
+          <span class="athlete-info">Julie Shepherd</span>
+          <br/>
+          <span class="pts">171 <span class="info"> from Novato</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#13</span>
+          <span class="athlete-info">Susan Crane</span>
+          <br/>
+          <span class="pts">170 <span class="info"> from Corte Madera/Mill Valley</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#14</span>
+          <span class="athlete-info">Kelly Schroth</span>
+          <br/>
+          <span class="pts">169 <span class="info"> from Novato</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#15</span>
+          <span class="athlete-info">Amy Jones</span>
+          <br/>
+          <span class="pts">168 <span class="info"> from San Rafael</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#16</span>
+          <span class="athlete-info">Lisa Travaglini</span>
+          <br/>
+          <span class="pts">166 <span class="info"> from San Rafael</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#17</span>
+          <span class="athlete-info">Olivia Stoddard</span>
+          <br/>
+          <span class="pts">164 <span class="info"> from Novato</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#18</span>
+          <span class="athlete-info">Rae Turner</span>
+          <br/>
+          <span class="pts">162 <span class="info"> from Novato</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#19</span>
+          <span class="athlete-info">Jessica Gardner</span>
+          <br/>
+          <span class="pts">161 <span class="info"> from Novato</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#20</span>
+          <span class="athlete-info">Alexia Moore</span>
+          <br/>
+          <span class="pts">160 <span class="info"> from San Rafael </span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#21</span>
+          <span class="athlete-info">Jennifer Luttrell</span>
+          <br/>
+          <span class="pts">155 <span class="info"> from San Rafael </span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#22</span>
+          <span class="athlete-info">Katie Baldino</span>
+          <br/>
+          <span class="pts">154 <span class="info"> from Novato</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#23</span>
+          <span class="athlete-info">Linda White</span>
+          <br/>
+          <span class="pts">153 <span class="info"> from San Rafael</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#24</span>
+          <span class="athlete-info">Kc Vlah</span>
+          <br/>
+          <span class="pts">152 <span class="info"> from San Rafael</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#24</span>
+          <span class="athlete-info">Jennifer Gauna</span>
+          <br/>
+          <span class="pts">152 <span class="info"> from San Rafael</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#26</span>
+          <span class="athlete-info">Fabiana Degenova</span>
+          <br/>
+          <span class="pts">150 <span class="info"> from Corte Madera/Mill Valley</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#27</span>
+          <span class="athlete-info">Kielty Nivaud</span>
+          <br/>
+          <span class="pts">149 <span class="info"> from OUTfit/San Rafael</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#28</span>
+          <span class="athlete-info">Kandi Blomquist</span>
+          <br/>
+          <span class="pts">148 <span class="info"> from Novato (TEAM Filly)</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#29</span>
+          <span class="athlete-info">Elisa Reitsch</span>
+          <br/>
+          <span class="pts">141 <span class="info"> from Mill Valley</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#29</span>
+          <span class="athlete-info">Kelley Golde</span>
+          <br/>
+          <span class="pts">141 <span class="info"> from Novato</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#31</span>
+          <span class="athlete-info">Marci Rhodes</span>
+          <br/>
+          <span class="pts">139 <span class="info"> from Novato</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#32</span>
+          <span class="athlete-info">Chizzie Brown</span>
+          <br/>
+          <span class="pts">136 <span class="info"> from San Rafael</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#33</span>
+          <span class="athlete-info">Gina Wyatt</span>
+          <br/>
+          <span class="pts">130 <span class="info"> from San Rafael</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#34</span>
+          <span class="athlete-info">Marla Murphy</span>
+          <br/>
+          <span class="pts">126 <span class="info"> from San Rafael</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#35</span>
+          <span class="athlete-info">Nicole McConneloug</span>
+          <br/>
+          <span class="pts">124 <span class="info"></span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#36</span>
+          <span class="athlete-info">Samantha Lief</span>
+          <br/>
+          <span class="pts">105 <span class="info"> from Novato</span></span>
+        </div>
+  <br/><br/>
+  <h3>WOD #3</h3>
+  <p><pre class="orange">AMRAP 6 minutes of:
+ * 5 Burpees over barbell
+ * 10 Power Cleans 95/135 (Scaled is 65/95)
+
+Rest one minute before WOD #4</pre></p>
+      <h4>Men's Modified</h4>
+        <div class="athlete">
+          <span class="rank">#X</span>
+          <span class="athlete-info">Mike Ferraro</span>
+          <br/>
+          <span class="pts"> <span class="info"> from Novato</span></span>
+        </div>
+      <h4>Men's RX</h4>
+        <div class="athlete">
+          <span class="rank">#1</span>
+          <span class="athlete-info">Brad Matsik</span>
+          <br/>
+          <span class="pts">81 <span class="info"> from San Rafael</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#2</span>
+          <span class="athlete-info">Steve Morlock</span>
+          <br/>
+          <span class="pts">79 <span class="info"> from San Rafael</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#3</span>
+          <span class="athlete-info">Beqir Gjoka</span>
+          <br/>
+          <span class="pts">75 <span class="info"> from Novato</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#4</span>
+          <span class="athlete-info">Paul Hughes</span>
+          <br/>
+          <span class="pts">71 <span class="info"> from San Rafael</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#5</span>
+          <span class="athlete-info">Doug Houlahan</span>
+          <br/>
+          <span class="pts">68 <span class="info"> from Novato</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#6</span>
+          <span class="athlete-info">Matt Wadlington</span>
+          <br/>
+          <span class="pts">65 <span class="info"> from San Rafael</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#6</span>
+          <span class="athlete-info">Hamilton Kipp</span>
+          <br/>
+          <span class="pts">65 <span class="info"> from Corte Madera</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#6</span>
+          <span class="athlete-info">Neil Murphy</span>
+          <br/>
+          <span class="pts">65 <span class="info"> from San Rafael</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#9</span>
+          <span class="athlete-info">Trevor Codington</span>
+          <br/>
+          <span class="pts">62 <span class="info"> from Novato</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#10</span>
+          <span class="athlete-info">Charlie Raven</span>
+          <br/>
+          <span class="pts">60 <span class="info"> from San Rafael</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#10</span>
+          <span class="athlete-info">Justin Derby</span>
+          <br/>
+          <span class="pts">60 <span class="info"> from San Rafael/Mill Valley</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#12</span>
+          <span class="athlete-info">Michael Chamberlin</span>
+          <br/>
+          <span class="pts">58 <span class="info"> from San Rafael</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#13</span>
+          <span class="athlete-info">Gedge Knopf</span>
+          <br/>
+          <span class="pts">57 <span class="info"> from San Rafael</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#14</span>
+          <span class="athlete-info">Radzmir Zalewski</span>
+          <br/>
+          <span class="pts">56 <span class="info"> from Novato</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#15</span>
+          <span class="athlete-info">Spencer Stuart</span>
+          <br/>
+          <span class="pts">53 <span class="info"> from San Rafael</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#16</span>
+          <span class="athlete-info">Dylan Grimes</span>
+          <br/>
+          <span class="pts">51 <span class="info"> from San Rafael/Mill Valley</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#17</span>
+          <span class="athlete-info">Kevin Dempsey</span>
+          <br/>
+          <span class="pts">40 <span class="info"> from Novato</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#18</span>
+          <span class="athlete-info">Anthony Ostaland</span>
+          <br/>
+          <span class="pts"> <span class="info"> from Mill Valley</span></span>
+        </div>
+      <h4>Men's Scaled</h4>
+        <div class="athlete">
+          <span class="rank">#1</span>
+          <span class="athlete-info">Vince Baldino</span>
+          <br/>
+          <span class="pts">85 <span class="info"> from Novato</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#2</span>
+          <span class="athlete-info">Pete Stathis </span>
+          <br/>
+          <span class="pts">78 <span class="info"> from Novato</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#3</span>
+          <span class="athlete-info">Josh Chassman</span>
+          <br/>
+          <span class="pts">77 <span class="info"> from Novato</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#3</span>
+          <span class="athlete-info">Nick Goepp</span>
+          <br/>
+          <span class="pts">77 <span class="info"> from San Rafael</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#5</span>
+          <span class="athlete-info">Brian Schroth</span>
+          <br/>
+          <span class="pts">74 <span class="info"> from Novato</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#6</span>
+          <span class="athlete-info">Max Nivaud</span>
+          <br/>
+          <span class="pts">70 <span class="info"> from San Rafael</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#7</span>
+          <span class="athlete-info">Greg Crane</span>
+          <br/>
+          <span class="pts">69 <span class="info"> from San Rafael</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#8</span>
+          <span class="athlete-info">Geoff Mattiuzzo</span>
+          <br/>
+          <span class="pts">68 <span class="info"> from San Rafael</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#9</span>
+          <span class="athlete-info">RIp Fowler</span>
+          <br/>
+          <span class="pts">66 <span class="info"> from San Rafael</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#9</span>
+          <span class="athlete-info">Carlos Botas</span>
+          <br/>
+          <span class="pts">66 <span class="info"> from Corte Madera</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#11</span>
+          <span class="athlete-info">Andy Moore</span>
+          <br/>
+          <span class="pts">65 <span class="info"> from San Rafael</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#12</span>
+          <span class="athlete-info">Whitney Wyatt</span>
+          <br/>
+          <span class="pts">64 <span class="info"> from San Rafael</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#12</span>
+          <span class="athlete-info">Nick Bartle</span>
+          <br/>
+          <span class="pts">64 <span class="info"> from CrossFit Felton Gable</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#14</span>
+          <span class="athlete-info">Eric Distad</span>
+          <br/>
+          <span class="pts">62 <span class="info"> from San Rafael</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#15</span>
+          <span class="athlete-info">Doug Kyle</span>
+          <br/>
+          <span class="pts">61 <span class="info"> from San Rafael (TEAM Filly)</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#16</span>
+          <span class="athlete-info">Jake Peterson</span>
+          <br/>
+          <span class="pts">60 <span class="info"> from Corte Madera</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#16</span>
+          <span class="athlete-info">Mike Harrosh</span>
+          <br/>
+          <span class="pts">60 <span class="info"> from Mill Valley/Corte Madera</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#16</span>
+          <span class="athlete-info">Michael Gruen</span>
+          <br/>
+          <span class="pts">60 <span class="info"> from Mill Valley</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#19</span>
+          <span class="athlete-info">Anthony Lowenstein</span>
+          <br/>
+          <span class="pts">58 <span class="info"> from Corte Madera</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#20</span>
+          <span class="athlete-info">Jason Stirman</span>
+          <br/>
+          <span class="pts">56 <span class="info"> from Mill Valley</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#20</span>
+          <span class="athlete-info">Mark Mossing</span>
+          <br/>
+          <span class="pts">56 <span class="info"> from San Rafael </span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#20</span>
+          <span class="athlete-info">Jeremiah Mehler</span>
+          <br/>
+          <span class="pts">56 <span class="info"> from San Rafael</span></span>
+        </div>
+      <h4>Women's Modified</h4>
+        <div class="athlete">
+          <span class="rank">#1</span>
+          <span class="athlete-info">Sheryl Hausman</span>
+          <br/>
+          <span class="pts">63 <span class="info"> from Corte Madera</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#2</span>
+          <span class="athlete-info">Whitney Ball</span>
+          <br/>
+          <span class="pts">62 <span class="info"> from San Rafael</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#3</span>
+          <span class="athlete-info">Asunta Pacheco-Kennedy</span>
+          <br/>
+          <span class="pts">60 <span class="info"> from Novato</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#4</span>
+          <span class="athlete-info">Marianne Ringgenberg</span>
+          <br/>
+          <span class="pts">53 <span class="info"> from Mill Valley</span></span>
+        </div>
+      <h4>Women's RX</h4>
+        <div class="athlete">
+          <span class="rank">#1</span>
+          <span class="athlete-info">Taylor Lawson</span>
+          <br/>
+          <span class="pts">82 <span class="info"> from Novato</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#2</span>
+          <span class="athlete-info">Heather Flynn</span>
+          <br/>
+          <span class="pts">70 <span class="info"> from San Rafael (TEAM Filly)</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#3</span>
+          <span class="athlete-info">Karen Boone</span>
+          <br/>
+          <span class="pts">65 <span class="info"> from Novato</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#3</span>
+          <span class="athlete-info">Bridget Yates</span>
+          <br/>
+          <span class="pts">65 <span class="info"> from San Rafael</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#5</span>
+          <span class="athlete-info">Jennifer Ranghiasci</span>
+          <br/>
+          <span class="pts">64 <span class="info"> from Novato</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#6</span>
+          <span class="athlete-info">Alicia Taylor</span>
+          <br/>
+          <span class="pts">60 <span class="info"> from Novato</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#7</span>
+          <span class="athlete-info">Grace Martin</span>
+          <br/>
+          <span class="pts">58 <span class="info"> from Novato</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#8</span>
+          <span class="athlete-info">Megan Kaden</span>
+          <br/>
+          <span class="pts">56 <span class="info"> from Mill Valley/Corte Madera/TEAM Filly</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#9</span>
+          <span class="athlete-info">Alicia Bannister</span>
+          <br/>
+          <span class="pts">53 <span class="info"> from Novato</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#10</span>
+          <span class="athlete-info">Sara Scott</span>
+          <br/>
+          <span class="pts">42 <span class="info"> from Novato</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#11</span>
+          <span class="athlete-info">Gia Kramer</span>
+          <br/>
+          <span class="pts">29 <span class="info"> from Novato</span></span>
+        </div>
+      <h4>Women's Scaled</h4>
+        <div class="athlete">
+          <span class="rank">#1</span>
+          <span class="athlete-info">Kelly Reitz</span>
+          <br/>
+          <span class="pts">86 <span class="info"> from Novato</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#2</span>
+          <span class="athlete-info">Sarah Buckley</span>
+          <br/>
+          <span class="pts">81 <span class="info"> from San Rafael</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#3</span>
+          <span class="athlete-info">Katie Baldino</span>
+          <br/>
+          <span class="pts">80 <span class="info"> from Novato</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#3</span>
+          <span class="athlete-info">Lisa Travaglini</span>
+          <br/>
+          <span class="pts">80 <span class="info"> from San Rafael</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#5</span>
+          <span class="athlete-info">Kathy Kay</span>
+          <br/>
+          <span class="pts">79 <span class="info"> from Novato</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#5</span>
+          <span class="athlete-info">Patty Flynn</span>
+          <br/>
+          <span class="pts">79 <span class="info"> from San Rafael</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#5</span>
+          <span class="athlete-info">Terra Chamberlin</span>
+          <br/>
+          <span class="pts">79 <span class="info"> from San Rafael</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#8</span>
+          <span class="athlete-info">Linley Kaye</span>
+          <br/>
+          <span class="pts">78 <span class="info"> from San Rafael</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#8</span>
+          <span class="athlete-info">Casey Daigle</span>
+          <br/>
+          <span class="pts">78 <span class="info"> from San Rafael</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#10</span>
+          <span class="athlete-info">Kc Vlah</span>
+          <br/>
+          <span class="pts">77 <span class="info"> from San Rafael</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#10</span>
+          <span class="athlete-info">Heidi George</span>
+          <br/>
+          <span class="pts">77 <span class="info"> from San Rafael</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#10</span>
+          <span class="athlete-info">Amy Jones</span>
+          <br/>
+          <span class="pts">77 <span class="info"> from San Rafael</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#13</span>
+          <span class="athlete-info">Lisa Smith</span>
+          <br/>
+          <span class="pts">76 <span class="info"> from Mill Valley (TEAM Filly)</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#14</span>
+          <span class="athlete-info">Susan Crane</span>
+          <br/>
+          <span class="pts">68 <span class="info"> from Corte Madera/Mill Valley</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#15</span>
+          <span class="athlete-info">Jennifer Luttrell</span>
+          <br/>
+          <span class="pts">67 <span class="info"> from San Rafael </span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#15</span>
+          <span class="athlete-info">Marci Rhodes</span>
+          <br/>
+          <span class="pts">67 <span class="info"> from Novato</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#17</span>
+          <span class="athlete-info">Rae Turner</span>
+          <br/>
+          <span class="pts">65 <span class="info"> from Novato</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#17</span>
+          <span class="athlete-info">Jennifer Gauna</span>
+          <br/>
+          <span class="pts">65 <span class="info"> from San Rafael</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#19</span>
+          <span class="athlete-info">Kelly Schroth</span>
+          <br/>
+          <span class="pts">64 <span class="info"> from Novato</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#20</span>
+          <span class="athlete-info">Denise Figone</span>
+          <br/>
+          <span class="pts">63 <span class="info"> from Novato (TEAM Filly)</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#20</span>
+          <span class="athlete-info">Jessica Gardner</span>
+          <br/>
+          <span class="pts">63 <span class="info"> from Novato</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#20</span>
+          <span class="athlete-info">Julie Shepherd</span>
+          <br/>
+          <span class="pts">63 <span class="info"> from Novato</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#23</span>
+          <span class="athlete-info">Samantha Lief</span>
+          <br/>
+          <span class="pts">62 <span class="info"> from Novato</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#24</span>
+          <span class="athlete-info">Kielty Nivaud</span>
+          <br/>
+          <span class="pts">59 <span class="info"> from OUTfit/San Rafael</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#25</span>
+          <span class="athlete-info">Alexia Moore</span>
+          <br/>
+          <span class="pts">58 <span class="info"> from San Rafael </span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#26</span>
+          <span class="athlete-info">Kelley Golde</span>
+          <br/>
+          <span class="pts">56 <span class="info"> from Novato</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#27</span>
+          <span class="athlete-info">Fabiana Degenova</span>
+          <br/>
+          <span class="pts">54 <span class="info"> from Corte Madera/Mill Valley</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#27</span>
+          <span class="athlete-info">Linda White</span>
+          <br/>
+          <span class="pts">54 <span class="info"> from San Rafael</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#29</span>
+          <span class="athlete-info">Elisa Reitsch</span>
+          <br/>
+          <span class="pts">53 <span class="info"> from Mill Valley</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#30</span>
+          <span class="athlete-info">Marla Murphy</span>
+          <br/>
+          <span class="pts">51 <span class="info"> from San Rafael</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#31</span>
+          <span class="athlete-info">Kandi Blomquist</span>
+          <br/>
+          <span class="pts">50 <span class="info"> from Novato (TEAM Filly)</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#32</span>
+          <span class="athlete-info">Chizzie Brown</span>
+          <br/>
+          <span class="pts">46 <span class="info"> from San Rafael</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#33</span>
+          <span class="athlete-info">Kris Mansbridge</span>
+          <br/>
+          <span class="pts">30 <span class="info"> from San Rafael (TEAM Filly)</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#34</span>
+          <span class="athlete-info">Olivia Stoddard</span>
+          <br/>
+          <span class="pts">29 <span class="info"> from Novato</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#35</span>
+          <span class="athlete-info">Gina Wyatt</span>
+          <br/>
+          <span class="pts">23 <span class="info"> from San Rafael</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#36</span>
+          <span class="athlete-info">Nicole McConneloug</span>
+          <br/>
+          <span class="pts"> <span class="info"></span></span>
+        </div>
+  <br/><br/>
+  <h3>WOD #4</h3>
+  <p><pre class="orange">Max reps ring dips in 60 seconds (Scaled # of kettle swings in 60 sec 35/55)
+
+Rest 1 minute, then:
+ * Max calorie row in 60 seconds
+
+Score is reps + calories rowed</pre></p>
+    <p class="orange">This event is worth 50%</p>
+      <h4>Men's Modified</h4>
+        <div class="athlete">
+          <span class="rank">#X</span>
+          <span class="athlete-info">Mike Ferraro</span>
+          <br/>
+          <span class="pts"> <span class="info"> from Novato</span></span>
+        </div>
+      <h4>Men's RX</h4>
+        <div class="athlete">
+          <span class="rank">#1</span>
+          <span class="athlete-info">Brad Matsik</span>
+          <br/>
+          <span class="pts">43 <span class="info"> from San Rafael</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#2</span>
+          <span class="athlete-info">Neil Murphy</span>
+          <br/>
+          <span class="pts">41 <span class="info"> from San Rafael</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#3</span>
+          <span class="athlete-info">Spencer Stuart</span>
+          <br/>
+          <span class="pts">40 <span class="info"> from San Rafael</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#4</span>
+          <span class="athlete-info">Steve Morlock</span>
+          <br/>
+          <span class="pts">39 <span class="info"> from San Rafael</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#5</span>
+          <span class="athlete-info">Gedge Knopf</span>
+          <br/>
+          <span class="pts">38 <span class="info"> from San Rafael</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#5</span>
+          <span class="athlete-info">Michael Chamberlin</span>
+          <br/>
+          <span class="pts">38 <span class="info"> from San Rafael</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#7</span>
+          <span class="athlete-info">Radzmir Zalewski</span>
+          <br/>
+          <span class="pts">37 <span class="info"> from Novato</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#8</span>
+          <span class="athlete-info">Hamilton Kipp</span>
+          <br/>
+          <span class="pts">36 <span class="info"> from Corte Madera</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#8/span>
+          <span class="athlete-info">Paul Hughes</span>
+          <br/>
+          <span class="pts">36 <span class="info"> from San Rafael</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#8</span>
+          <span class="athlete-info">Kevin Dempsey</span>
+          <br/>
+          <span class="pts">36 <span class="info"> from Novato</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#11</span>
+          <span class="athlete-info">Doug Houlahan</span>
+          <br/>
+          <span class="pts">35 <span class="info"> from Novato</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#12</span>
+          <span class="athlete-info">Matt Wadlington</span>
+          <br/>
+          <span class="pts">34 <span class="info"> from San Rafael</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#13</span>
+          <span class="athlete-info">Charlie Raven</span>
+          <br/>
+          <span class="pts">30 <span class="info"> from San Rafael</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#13</span>
+          <span class="athlete-info">Dylan Grimes</span>
+          <br/>
+          <span class="pts">30 <span class="info"> from San Rafael/Mill Valley</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#15</span>
+          <span class="athlete-info">Beqir Gjoka</span>
+          <br/>
+          <span class="pts">29 <span class="info"> from Novato</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#16</span>
+          <span class="athlete-info">Justin Derby</span>
+          <br/>
+          <span class="pts">28 <span class="info"> from San Rafael/Mill Valley</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#16</span>
+          <span class="athlete-info">Trevor Codington</span>
+          <br/>
+          <span class="pts">28 <span class="info"> from Novato</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#18</span>
+          <span class="athlete-info">Anthony Ostaland</span>
+          <br/>
+          <span class="pts"> <span class="info"> from Mill Valley</span></span>
+        </div>
+      <h4>Men's Scaled</h4>
+        <div class="athlete">
+          <span class="rank">#1</span>
+          <span class="athlete-info">Jake Peterson</span>
+          <br/>
+          <span class="pts">45 <span class="info"> from Corte Madera</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#1</span>
+          <span class="athlete-info">Nick Goepp</span>
+          <br/>
+          <span class="pts">45 <span class="info"> from San Rafael</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#3</span>
+          <span class="athlete-info">Nick Bartle</span>
+          <br/>
+          <span class="pts">44 <span class="info"> from CrossFit Felton Gable</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#3</span>
+          <span class="athlete-info">Josh Chassman</span>
+          <br/>
+          <span class="pts">44 <span class="info"> from Novato</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#5</span>
+          <span class="athlete-info">Pete Stathis </span>
+          <br/>
+          <span class="pts">43 <span class="info"> from Novato</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#6</span>
+          <span class="athlete-info">Greg Crane</span>
+          <br/>
+          <span class="pts">41 <span class="info"> from San Rafael</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#6</span>
+          <span class="athlete-info">Geoff Mattiuzzo</span>
+          <br/>
+          <span class="pts">41 <span class="info"> from San Rafael</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#8</span>
+          <span class="athlete-info">Brian Schroth</span>
+          <br/>
+          <span class="pts">40 <span class="info"> from Novato</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#8</span>
+          <span class="athlete-info">Max Nivaud</span>
+          <br/>
+          <span class="pts">40 <span class="info"> from San Rafael</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#10</span>
+          <span class="athlete-info">Whitney Wyatt</span>
+          <br/>
+          <span class="pts">39 <span class="info"> from San Rafael</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#10</span>
+          <span class="athlete-info">Jeremiah Mehler</span>
+          <br/>
+          <span class="pts">39 <span class="info"> from San Rafael</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#12</span>
+          <span class="athlete-info">Doug Kyle</span>
+          <br/>
+          <span class="pts">38 <span class="info"> from San Rafael (TEAM Filly)</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#13</span>
+          <span class="athlete-info">Andy Moore</span>
+          <br/>
+          <span class="pts">37 <span class="info"> from San Rafael</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#13</span>
+          <span class="athlete-info">Carlos Botas</span>
+          <br/>
+          <span class="pts">37 <span class="info"> from Corte Madera</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#15</span>
+          <span class="athlete-info">Mike Harrosh</span>
+          <br/>
+          <span class="pts">36 <span class="info"> from Mill Valley/Corte Madera</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#16</span>
+          <span class="athlete-info">Eric Distad</span>
+          <br/>
+          <span class="pts">35 <span class="info"> from San Rafael</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#16</span>
+          <span class="athlete-info">Jason Stirman</span>
+          <br/>
+          <span class="pts">35 <span class="info"> from Mill Valley</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#16</span>
+          <span class="athlete-info">Vince Baldino</span>
+          <br/>
+          <span class="pts">35 <span class="info"> from Novato</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#19</span>
+          <span class="athlete-info">Mark Mossing</span>
+          <br/>
+          <span class="pts">34 <span class="info"> from San Rafael </span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#19</span>
+          <span class="athlete-info">Anthony Lowenstein</span>
+          <br/>
+          <span class="pts">34 <span class="info"> from Corte Madera</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#21</span>
+          <span class="athlete-info">Michael Gruen</span>
+          <br/>
+          <span class="pts">28 <span class="info"> from Mill Valley</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#22</span>
+          <span class="athlete-info">RIp Fowler</span>
+          <br/>
+          <span class="pts">26 <span class="info"> from San Rafael</span></span>
+        </div>
+      <h4>Women's Modified</h4>
+        <div class="athlete">
+          <span class="rank">#1</span>
+          <span class="athlete-info">Sheryl Hausman</span>
+          <br/>
+          <span class="pts">36 <span class="info"> from Corte Madera</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#2</span>
+          <span class="athlete-info">Asunta Pacheco-Kennedy</span>
+          <br/>
+          <span class="pts">33 <span class="info"> from Novato</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#2</span>
+          <span class="athlete-info">Marianne Ringgenberg</span>
+          <br/>
+          <span class="pts">33 <span class="info"> from Mill Valley</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#4</span>
+          <span class="athlete-info">Whitney Ball</span>
+          <br/>
+          <span class="pts">30 <span class="info"> from San Rafael</span></span>
+        </div>
+      <h4>Women's RX</h4>
+        <div class="athlete">
+          <span class="rank">#1</span>
+          <span class="athlete-info">Heather Flynn</span>
+          <br/>
+          <span class="pts">33 <span class="info"> from San Rafael (TEAM Filly)</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#2</span>
+          <span class="athlete-info">Gia Kramer</span>
+          <br/>
+          <span class="pts">27 <span class="info"> from Novato</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#3</span>
+          <span class="athlete-info">Megan Kaden</span>
+          <br/>
+          <span class="pts">26 <span class="info"> from Mill Valley/Corte Madera/TEAM Filly</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#4</span>
+          <span class="athlete-info">Alicia Bannister</span>
+          <br/>
+          <span class="pts">25 <span class="info"> from Novato</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#5</span>
+          <span class="athlete-info">Taylor Lawson</span>
+          <br/>
+          <span class="pts">24 <span class="info"> from Novato</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#6</span>
+          <span class="athlete-info">Alicia Taylor</span>
+          <br/>
+          <span class="pts">23 <span class="info"> from Novato</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#7</span>
+          <span class="athlete-info">Bridget Yates</span>
+          <br/>
+          <span class="pts">22 <span class="info"> from San Rafael</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#7</span>
+          <span class="athlete-info">Grace Martin</span>
+          <br/>
+          <span class="pts">22 <span class="info"> from Novato</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#9</span>
+          <span class="athlete-info">Karen Boone</span>
+          <br/>
+          <span class="pts">21 <span class="info"> from Novato</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#10</span>
+          <span class="athlete-info">Jennifer Ranghiasci</span>
+          <br/>
+          <span class="pts">19 <span class="info"> from Novato</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#11</span>
+          <span class="athlete-info">Sara Scott</span>
+          <br/>
+          <span class="pts">18 <span class="info"> from Novato</span></span>
+        </div>
+      <h4>Women's Scaled</h4>
+        <div class="athlete">
+          <span class="rank">#1</span>
+          <span class="athlete-info">Fabiana Degenova</span>
+          <br/>
+          <span class="pts">55 <span class="info"> from Corte Madera/Mill Valley</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#2</span>
+          <span class="athlete-info">Linda White</span>
+          <br/>
+          <span class="pts">47 <span class="info"> from San Rafael</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#3</span>
+          <span class="athlete-info">Patty Flynn</span>
+          <br/>
+          <span class="pts">46 <span class="info"> from San Rafael</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#4</span>
+          <span class="athlete-info">Kielty Nivaud</span>
+          <br/>
+          <span class="pts">45 <span class="info"> from OUTfit/San Rafael</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#5</span>
+          <span class="athlete-info">Lisa Travaglini</span>
+          <br/>
+          <span class="pts">44 <span class="info"> from San Rafael</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#6</span>
+          <span class="athlete-info">Lisa Smith</span>
+          <br/>
+          <span class="pts">43 <span class="info"> from Mill Valley (TEAM Filly)</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#7</span>
+          <span class="athlete-info">Amy Jones</span>
+          <br/>
+          <span class="pts">42 <span class="info"> from San Rafael</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#7</span>
+          <span class="athlete-info">Kathy Kay</span>
+          <br/>
+          <span class="pts">42 <span class="info"> from Novato</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#7</span>
+          <span class="athlete-info">Katie Baldino</span>
+          <br/>
+          <span class="pts">42 <span class="info"> from Novato</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#10</span>
+          <span class="athlete-info">Marci Rhodes</span>
+          <br/>
+          <span class="pts">41 <span class="info"> from Novato</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#10</span>
+          <span class="athlete-info">Susan Crane</span>
+          <br/>
+          <span class="pts">41 <span class="info"> from Corte Madera/Mill Valley</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#10</span>
+          <span class="athlete-info">Julie Shepherd</span>
+          <br/>
+          <span class="pts">41 <span class="info"> from Novato</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#13</span>
+          <span class="athlete-info">Terra Chamberlin</span>
+          <br/>
+          <span class="pts">40 <span class="info"> from San Rafael</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#14</span>
+          <span class="athlete-info">Jennifer Gauna</span>
+          <br/>
+          <span class="pts">39 <span class="info"> from San Rafael</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#14</span>
+          <span class="athlete-info">Linley Kaye</span>
+          <br/>
+          <span class="pts">39 <span class="info"> from San Rafael</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#16</span>
+          <span class="athlete-info">Kelly Schroth</span>
+          <br/>
+          <span class="pts">37 <span class="info"> from Novato</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#16</span>
+          <span class="athlete-info">Denise Figone</span>
+          <br/>
+          <span class="pts">37 <span class="info"> from Novato (TEAM Filly)</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#18</span>
+          <span class="athlete-info">Kandi Blomquist</span>
+          <br/>
+          <span class="pts">36 <span class="info"> from Novato (TEAM Filly)</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#18</span>
+          <span class="athlete-info">Sarah Buckley</span>
+          <br/>
+          <span class="pts">36 <span class="info"> from San Rafael</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#20</span>
+          <span class="athlete-info">Casey Daigle</span>
+          <br/>
+          <span class="pts">35 <span class="info"> from San Rafael</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#20</span>
+          <span class="athlete-info">Rae Turner</span>
+          <br/>
+          <span class="pts">35 <span class="info"> from Novato</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#22</span>
+          <span class="athlete-info">Alexia Moore</span>
+          <br/>
+          <span class="pts">34 <span class="info"> from San Rafael </span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#22</span>
+          <span class="athlete-info">Jennifer Luttrell</span>
+          <br/>
+          <span class="pts">34 <span class="info"> from San Rafael </span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#24</span>
+          <span class="athlete-info">Kelly Reitz</span>
+          <br/>
+          <span class="pts">33 <span class="info"> from Novato</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#24</span>
+          <span class="athlete-info">Kelley Golde</span>
+          <br/>
+          <span class="pts">33 <span class="info"> from Novato</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#26</span>
+          <span class="athlete-info">Samantha Lief</span>
+          <br/>
+          <span class="pts">32 <span class="info"> from Novato</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#26</span>
+          <span class="athlete-info">Gina Wyatt</span>
+          <br/>
+          <span class="pts">32 <span class="info"> from San Rafael</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#26</span>
+          <span class="athlete-info">Kc Vlah</span>
+          <br/>
+          <span class="pts">32 <span class="info"> from San Rafael</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#29</span>
+          <span class="athlete-info">Heidi George</span>
+          <br/>
+          <span class="pts">30 <span class="info"> from San Rafael</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#30</span>
+          <span class="athlete-info">Olivia Stoddard</span>
+          <br/>
+          <span class="pts">29 <span class="info"> from Novato</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#31</span>
+          <span class="athlete-info">Marla Murphy</span>
+          <br/>
+          <span class="pts">27 <span class="info"> from San Rafael</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#32</span>
+          <span class="athlete-info">Jessica Gardner</span>
+          <br/>
+          <span class="pts">25 <span class="info"> from Novato</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#32</span>
+          <span class="athlete-info">Chizzie Brown</span>
+          <br/>
+          <span class="pts">25 <span class="info"> from San Rafael</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#34</span>
+          <span class="athlete-info">Elisa Reitsch</span>
+          <br/>
+          <span class="pts">24 <span class="info"> from Mill Valley</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#35</span>
+          <span class="athlete-info">Kris Mansbridge</span>
+          <br/>
+          <span class="pts">21 <span class="info"> from San Rafael (TEAM Filly)</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#36</span>
+          <span class="athlete-info">Nicole McConneloug</span>
+          <br/>
+          <span class="pts"> <span class="info"></span></span>
+        </div>
+  <br/><br/>
+  <h3>WOD #5 - Final Event for Top 5</h3>
+  <p><pre class="orange">Will be announced after WOD #4!</pre></p>
+      <h4>Men's Modified</h4>
+        <div class="athlete">
+          <span class="rank">#X</span>
+          <span class="athlete-info">Mike Ferraro</span>
+          <br/>
+          <span class="pts"> <span class="info"> from Novato</span></span>
+        </div>
+      <h4>Men's RX</h4>
+        <div class="athlete">
+          <span class="rank">#1</span>
+          <span class="athlete-info">Brad Matsik</span>
+          <br/>
+          <span class="pts">10:31 <span class="info"> from San Rafael</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#2</span>
+          <span class="athlete-info">Paul Hughes</span>
+          <br/>
+          <span class="pts">11:54 <span class="info"> from San Rafael</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#3</span>
+          <span class="athlete-info">Steve Morlock</span>
+          <br/>
+          <span class="pts">13:54 <span class="info"> from San Rafael</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#4</span>
+          <span class="athlete-info">Doug Houlahan</span>
+          <br/>
+          <span class="pts">14:08 <span class="info"> from Novato</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#5</span>
+          <span class="athlete-info">Hamilton Kipp</span>
+          <br/>
+          <span class="pts">17:01 <span class="info"> from Corte Madera</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#6</span>
+          <span class="athlete-info">Neil Murphy</span>
+          <br/>
+          <span class="pts">18:18 <span class="info"> from San Rafael</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#7</span>
+          <span class="athlete-info">Radzmir Zalewski</span>
+          <br/>
+          <span class="pts"> <span class="info"> from Novato</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#7</span>
+          <span class="athlete-info">Beqir Gjoka</span>
+          <br/>
+          <span class="pts"> <span class="info"> from Novato</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#7</span>
+          <span class="athlete-info">Charlie Raven</span>
+          <br/>
+          <span class="pts"> <span class="info"> from San Rafael</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#7</span>
+          <span class="athlete-info">Dylan Grimes</span>
+          <br/>
+          <span class="pts"> <span class="info"> from San Rafael/Mill Valley</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#7</span>
+          <span class="athlete-info">Spencer Stuart</span>
+          <br/>
+          <span class="pts"> <span class="info"> from San Rafael</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#7</span>
+          <span class="athlete-info">Gedge Knopf</span>
+          <br/>
+          <span class="pts"> <span class="info"> from San Rafael</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#7</span>
+          <span class="athlete-info">Matt Wadlington</span>
+          <br/>
+          <span class="pts"> <span class="info"> from San Rafael</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#7</span>
+          <span class="athlete-info">Michael Chamberlin</span>
+          <br/>
+          <span class="pts"> <span class="info"> from San Rafael</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#7</span>
+          <span class="athlete-info">Trevor Codington</span>
+          <br/>
+          <span class="pts"> <span class="info"> from Novato</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#7</span>
+          <span class="athlete-info">Kevin Dempsey</span>
+          <br/>
+          <span class="pts"> <span class="info"> from Novato</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#7</span>
+          <span class="athlete-info">Justin Derby</span>
+          <br/>
+          <span class="pts"> <span class="info"> from San Rafael/Mill Valley</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#7</span>
+          <span class="athlete-info">Anthony Ostaland</span>
+          <br/>
+          <span class="pts"> <span class="info"> from Mill Valley</span></span>
+        </div>
+      <h4>Men's Scaled</h4>
+        <div class="athlete">
+          <span class="rank">#X</span>
+          <span class="athlete-info">Geoff Mattiuzzo</span>
+          <br/>
+          <span class="pts"> <span class="info"> from San Rafael</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#X</span>
+          <span class="athlete-info">Jeremiah Mehler</span>
+          <br/>
+          <span class="pts"> <span class="info"> from San Rafael</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#X</span>
+          <span class="athlete-info">Mark Mossing</span>
+          <br/>
+          <span class="pts"> <span class="info"> from San Rafael </span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#X</span>
+          <span class="athlete-info">Max Nivaud</span>
+          <br/>
+          <span class="pts"> <span class="info"> from San Rafael</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#X</span>
+          <span class="athlete-info">Jake Peterson</span>
+          <br/>
+          <span class="pts"> <span class="info"> from Corte Madera</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#X</span>
+          <span class="athlete-info">Brian Schroth</span>
+          <br/>
+          <span class="pts"> <span class="info"> from Novato</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#X</span>
+          <span class="athlete-info">Pete Stathis </span>
+          <br/>
+          <span class="pts"> <span class="info"> from Novato</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#X</span>
+          <span class="athlete-info">Jason Stirman</span>
+          <br/>
+          <span class="pts"> <span class="info"> from Mill Valley</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#X</span>
+          <span class="athlete-info">Whitney Wyatt</span>
+          <br/>
+          <span class="pts"> <span class="info"> from San Rafael</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#X</span>
+          <span class="athlete-info">Doug Kyle</span>
+          <br/>
+          <span class="pts"> <span class="info"> from San Rafael (TEAM Filly)</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#X</span>
+          <span class="athlete-info">Andy Moore</span>
+          <br/>
+          <span class="pts"> <span class="info"> from San Rafael</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#X</span>
+          <span class="athlete-info">Vince Baldino</span>
+          <br/>
+          <span class="pts"> <span class="info"> from Novato</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#X</span>
+          <span class="athlete-info">Nick Bartle</span>
+          <br/>
+          <span class="pts"> <span class="info"> from CrossFit Felton Gable</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#X</span>
+          <span class="athlete-info">Carlos Botas</span>
+          <br/>
+          <span class="pts"> <span class="info"> from Corte Madera</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#X</span>
+          <span class="athlete-info">Josh Chassman</span>
+          <br/>
+          <span class="pts"> <span class="info"> from Novato</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#X</span>
+          <span class="athlete-info">Greg Crane</span>
+          <br/>
+          <span class="pts"> <span class="info"> from San Rafael</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#X</span>
+          <span class="athlete-info">Eric Distad</span>
+          <br/>
+          <span class="pts"> <span class="info"> from San Rafael</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#X</span>
+          <span class="athlete-info">RIp Fowler</span>
+          <br/>
+          <span class="pts"> <span class="info"> from San Rafael</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#X</span>
+          <span class="athlete-info">Nick Goepp</span>
+          <br/>
+          <span class="pts"> <span class="info"> from San Rafael</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#X</span>
+          <span class="athlete-info">Michael Gruen</span>
+          <br/>
+          <span class="pts"> <span class="info"> from Mill Valley</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#X</span>
+          <span class="athlete-info">Mike Harrosh</span>
+          <br/>
+          <span class="pts"> <span class="info"> from Mill Valley/Corte Madera</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#X</span>
+          <span class="athlete-info">Anthony Lowenstein</span>
+          <br/>
+          <span class="pts"> <span class="info"> from Corte Madera</span></span>
+        </div>
+      <h4>Women's Modified</h4>
+        <div class="athlete">
+          <span class="rank">#X</span>
+          <span class="athlete-info">Asunta Pacheco-Kennedy</span>
+          <br/>
+          <span class="pts"> <span class="info"> from Novato</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#X</span>
+          <span class="athlete-info">Marianne Ringgenberg</span>
+          <br/>
+          <span class="pts"> <span class="info"> from Mill Valley</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#X</span>
+          <span class="athlete-info">Sheryl Hausman</span>
+          <br/>
+          <span class="pts"> <span class="info"> from Corte Madera</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#X</span>
+          <span class="athlete-info">Whitney Ball</span>
+          <br/>
+          <span class="pts"> <span class="info"> from San Rafael</span></span>
+        </div>
+      <h4>Women's RX</h4>
+        <div class="athlete">
+          <span class="rank">#1</span>
+          <span class="athlete-info">Heather Flynn</span>
+          <br/>
+          <span class="pts">11:56 <span class="info"> from San Rafael (TEAM Filly)</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#2</span>
+          <span class="athlete-info">Taylor Lawson</span>
+          <br/>
+          <span class="pts">13:15 <span class="info"> from Novato</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#3</span>
+          <span class="athlete-info">Karen Boone</span>
+          <br/>
+          <span class="pts">17:52 <span class="info"> from Novato</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#4</span>
+          <span class="athlete-info">Alicia Bannister</span>
+          <br/>
+          <span class="pts">20:01 <span class="info"> from Novato</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#5</span>
+          <span class="athlete-info">Alicia Taylor</span>
+          <br/>
+          <span class="pts">20:02 <span class="info"> from Novato</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#6</span>
+          <span class="athlete-info">Jennifer Ranghiasci</span>
+          <br/>
+          <span class="pts">20:03 <span class="info"> from Novato</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#7</span>
+          <span class="athlete-info">Sara Scott</span>
+          <br/>
+          <span class="pts"> <span class="info"> from Novato</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#7</span>
+          <span class="athlete-info">Gia Kramer</span>
+          <br/>
+          <span class="pts"> <span class="info"> from Novato</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#7</span>
+          <span class="athlete-info">Grace Martin</span>
+          <br/>
+          <span class="pts"> <span class="info"> from Novato</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#7</span>
+          <span class="athlete-info">Megan Kaden</span>
+          <br/>
+          <span class="pts"> <span class="info"> from Mill Valley/Corte Madera/TEAM Filly</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#7</span>
+          <span class="athlete-info">Bridget Yates</span>
+          <br/>
+          <span class="pts"> <span class="info"> from San Rafael</span></span>
+        </div>
+      <h4>Women's Scaled</h4>
+        <div class="athlete">
+          <span class="rank">#X</span>
+          <span class="athlete-info">Kris Mansbridge</span>
+          <br/>
+          <span class="pts"> <span class="info"> from San Rafael (TEAM Filly)</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#X</span>
+          <span class="athlete-info">Jennifer Luttrell</span>
+          <br/>
+          <span class="pts"> <span class="info"> from San Rafael </span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#X</span>
+          <span class="athlete-info">Alexia Moore</span>
+          <br/>
+          <span class="pts"> <span class="info"> from San Rafael </span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#X</span>
+          <span class="athlete-info">Marla Murphy</span>
+          <br/>
+          <span class="pts"> <span class="info"> from San Rafael</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#X</span>
+          <span class="athlete-info">Kelley Golde</span>
+          <br/>
+          <span class="pts"> <span class="info"> from Novato</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#X</span>
+          <span class="athlete-info">Elisa Reitsch</span>
+          <br/>
+          <span class="pts"> <span class="info"> from Mill Valley</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#X</span>
+          <span class="athlete-info">Kelly Reitz</span>
+          <br/>
+          <span class="pts"> <span class="info"> from Novato</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#X</span>
+          <span class="athlete-info">Marci Rhodes</span>
+          <br/>
+          <span class="pts"> <span class="info"> from Novato</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#X</span>
+          <span class="athlete-info">Lisa Smith</span>
+          <br/>
+          <span class="pts"> <span class="info"> from Mill Valley (TEAM Filly)</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#X</span>
+          <span class="athlete-info">Olivia Stoddard</span>
+          <br/>
+          <span class="pts"> <span class="info"> from Novato</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#X</span>
+          <span class="athlete-info">Lisa Travaglini</span>
+          <br/>
+          <span class="pts"> <span class="info"> from San Rafael</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#X</span>
+          <span class="athlete-info">Rae Turner</span>
+          <br/>
+          <span class="pts"> <span class="info"> from Novato</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#X</span>
+          <span class="athlete-info">Kc Vlah</span>
+          <br/>
+          <span class="pts"> <span class="info"> from San Rafael</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#X</span>
+          <span class="athlete-info">Linda White</span>
+          <br/>
+          <span class="pts"> <span class="info"> from San Rafael</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#X</span>
+          <span class="athlete-info">Gina Wyatt</span>
+          <br/>
+          <span class="pts"> <span class="info"> from San Rafael</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#X</span>
+          <span class="athlete-info">Kielty Nivaud</span>
+          <br/>
+          <span class="pts"> <span class="info"> from OUTfit/San Rafael</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#X</span>
+          <span class="athlete-info">Julie Shepherd</span>
+          <br/>
+          <span class="pts"> <span class="info"> from Novato</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#X</span>
+          <span class="athlete-info">Nicole McConneloug</span>
+          <br/>
+          <span class="pts"> <span class="info"></span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#X</span>
+          <span class="athlete-info">Kelly Schroth</span>
+          <br/>
+          <span class="pts"> <span class="info"> from Novato</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#X</span>
+          <span class="athlete-info">Katie Baldino</span>
+          <br/>
+          <span class="pts"> <span class="info"> from Novato</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#X</span>
+          <span class="athlete-info">Kandi Blomquist</span>
+          <br/>
+          <span class="pts"> <span class="info"> from Novato (TEAM Filly)</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#X</span>
+          <span class="athlete-info">Sarah Buckley</span>
+          <br/>
+          <span class="pts"> <span class="info"> from San Rafael</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#X</span>
+          <span class="athlete-info">Chizzie Brown</span>
+          <br/>
+          <span class="pts"> <span class="info"> from San Rafael</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#X</span>
+          <span class="athlete-info">Terra Chamberlin</span>
+          <br/>
+          <span class="pts"> <span class="info"> from San Rafael</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#X</span>
+          <span class="athlete-info">Susan Crane</span>
+          <br/>
+          <span class="pts"> <span class="info"> from Corte Madera/Mill Valley</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#X</span>
+          <span class="athlete-info">Casey Daigle</span>
+          <br/>
+          <span class="pts"> <span class="info"> from San Rafael</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#X</span>
+          <span class="athlete-info">Fabiana Degenova</span>
+          <br/>
+          <span class="pts"> <span class="info"> from Corte Madera/Mill Valley</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#X</span>
+          <span class="athlete-info">Denise Figone</span>
+          <br/>
+          <span class="pts"> <span class="info"> from Novato (TEAM Filly)</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#X</span>
+          <span class="athlete-info">Patty Flynn</span>
+          <br/>
+          <span class="pts"> <span class="info"> from San Rafael</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#X</span>
+          <span class="athlete-info">Jessica Gardner</span>
+          <br/>
+          <span class="pts"> <span class="info"> from Novato</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#X</span>
+          <span class="athlete-info">Jennifer Gauna</span>
+          <br/>
+          <span class="pts"> <span class="info"> from San Rafael</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#X</span>
+          <span class="athlete-info">Heidi George</span>
+          <br/>
+          <span class="pts"> <span class="info"> from San Rafael</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#X</span>
+          <span class="athlete-info">Amy Jones</span>
+          <br/>
+          <span class="pts"> <span class="info"> from San Rafael</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#X</span>
+          <span class="athlete-info">Kathy Kay</span>
+          <br/>
+          <span class="pts"> <span class="info"> from Novato</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#X</span>
+          <span class="athlete-info">Linley Kaye</span>
+          <br/>
+          <span class="pts"> <span class="info"> from San Rafael</span></span>
+        </div>
+        <div class="athlete">
+          <span class="rank">#X</span>
+          <span class="athlete-info">Samantha Lief</span>
+          <br/>
+          <span class="pts"> <span class="info"> from Novato</span></span>
+        </div>
+  <br/><br/>
+
+
+<script type="text/javascript">if (!NREUMQ.f) { NREUMQ.f=function() {
+NREUMQ.push(["load",new Date().getTime()]);
+var e=document.createElement("script");
+e.type="text/javascript";e.async=true;e.src="https://d1ros97qkrwjf5.cloudfront.net/24/eum/rum-staging.js";
+document.body.appendChild(e);
+if(NREUMQ.a)NREUMQ.a();
+};
+NREUMQ.a=window.onload;window.onload=NREUMQ.f;
+};
+NREUMQ.push(["nrf2","beacon-1.newrelic.com","fa70c89342",203482,"dV0MFUVbX1VVQx1JV1FXEU5UW15JVUVbTV9ZXA==",6,2835,new Date().getTime()])</script></body>
+</html>
