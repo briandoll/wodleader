@@ -45,4 +45,27 @@ module Wodleader
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
   end
+
 end
+
+
+module RailsAdmin
+  class History < ActiveRecord::Base
+
+    def self.get_history_for_dates(mstart, mstop, ystart, ystop)
+      []
+    end
+
+    def self.find(a,b)
+      []
+    end
+
+    def record_count(*args)
+      0
+    end
+
+    def record_count=(arg)
+    end
+  end
+end
+
