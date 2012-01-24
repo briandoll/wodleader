@@ -8,10 +8,18 @@ class Athlete < ActiveRecord::Base
   
   after_create :create_event_athletes
   
+  def max_ranking
+    @max_ranking ||= Athlete.where("competition_id = #{self.competition_id}").count + 1
+  end
+
   def category
     competition_category.name
   end
-  
+
+  def max_competition_ranking
+    event_athletes.size * max_ranking
+  end
+
   def competition_rank_total
     rank = 0
     event_athletes.each do |ea|
@@ -19,7 +27,7 @@ class Athlete < ActiveRecord::Base
         event_ranking = (ea.event_rank * ea.event.event_weight)
         rank += event_ranking
       else
-        rank += 100
+        rank += max_ranking
       end
     end
     rank

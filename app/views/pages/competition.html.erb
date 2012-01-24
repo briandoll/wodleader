@@ -23,7 +23,11 @@
       <span class="rank">#<%= ranking %></span>
       <span class="athlete-info"><%= "#{athlete.name}" %></span>
       <br/>
-      <span class="pts"><%= "#{athlete.competition_rank_total}" %>pts <span class="info"><%= " (##{athlete.number})" if athlete.number %><%= " from #{athlete.affiliation}" if athlete.affiliation %></span></span>
+      <% max    = athlete.max_competition_ranking
+         mine   = athlete.competition_rank_total
+         points = (max.eql?(mine) ? "0" : mine)
+      %>
+      <span class="pts"><%= "#{points}" %>pts <span class="info"><%= " (##{athlete.number})" if athlete.number %><%= " from #{athlete.affiliation}" if athlete.affiliation %></span></span>
     </div>
   <% end %>
 <% end %>
