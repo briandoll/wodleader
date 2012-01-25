@@ -6,6 +6,7 @@
 
 
 <div class="event-list-header">Skip to Event:</div>
+<small>(These are not in order)</small>
 <% competition.events.each do |event| %>
  <div class="event-link"><%= link_to event.name, "##{event.name}" %></div>
 <% end %>
