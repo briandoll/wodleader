@@ -1,5 +1,5 @@
 <div class="tk-adelle">
-<% Competition.all.each do |competition| %>
+<% Competition.all.reverse.each do |competition| %>
   <p>
   <h1><%= link_to "#{competition.name}  &raquo;".html_safe, competition_path(competition) %></h1>
   <strong>When:</strong> <%= competition.when %><br/>
