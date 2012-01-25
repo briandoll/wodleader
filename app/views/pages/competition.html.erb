@@ -4,6 +4,12 @@
 <strong>where:</strong> <%= competition.where %><br/><br/>
 <p><%= competition.description %></p>
 
+
+<div class="event-list-header">Skip to Event:</div>
+<% competition.events.each do |event| %>
+ <div class="event-link"><%= link_to event.name, "##{event.name}" %></div>
+<% end %>
+
 <h2 class="tightbottom">Current Leader Board:</h2>
 
 <% if updated = competition.most_recent_stat_update %>
@@ -14,7 +20,6 @@
     <span class="updated">Stats updated <%= time_ago_in_words(updated) %> ago</span>
   </div>
 <% end %>
-
 
 <% competition.leader_board.sort.each do |category, athletes| %>
   <h4><%= category %></h4>
@@ -34,6 +39,7 @@
 <br/>
 <h2>Events:</h2>
 <% competition.events.sort.each do |event| %>
+ <a name="<%= event.name %>"></a>
   <h3><%= event.name %></h3>
   <p><pre class="orange"><%= event.description %></pre></p>
   <% if !([1.0, 1, nil].include?(event.event_weight)) %>
