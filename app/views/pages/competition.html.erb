@@ -10,6 +10,7 @@
  <div class="event-link"><%= link_to event.name, "##{event.name}" %></div>
 <% end %>
 
+<a name="top"></a>
 <h2 class="tightbottom">Current Leader Board:</h2>
 
 <% if updated = competition.most_recent_stat_update %>
@@ -41,6 +42,7 @@
 <% competition.events.sort.each do |event| %>
  <a name="<%= event.name %>"></a>
   <h3><%= event.name %></h3>
+  <small>[<a href="#top">Back to Leaderboard</a>]</small>
   <p><pre class="orange"><%= event.description %></pre></p>
   <% if !([1.0, 1, nil].include?(event.event_weight)) %>
     <p class="orange">This event is worth <%= (event.event_weight * 100).to_i %>%</p>
