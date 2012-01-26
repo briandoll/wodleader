@@ -1,4 +1,7 @@
 <div class="tk-adelle">
+
+<a href="#scoring">Curious how Crossfit games-style scoring works?</a>
+
 <% Competition.all.reverse.each do |competition| %>
   <p>
   <h1><%= link_to "#{competition.name}  &raquo;".html_safe, competition_path(competition) %></h1>
@@ -7,4 +10,11 @@
   <p><%= competition.description %></p>
   </p>
 <% end %>
+  
+  <a name="scoring"></a>
+  <h3>How does Crossfit Games-style scoring work?</h3>
+  <p>Athletes compete in events, resulting in a score. A score may be total number of reps, rounds, time, etc. Athletes are ranked against their group (RX Men, for example) for each event.  (Ties are ranked as expected, 1, 2, 2, 4, for example) The sum of an athlete's rankings is their total score for the competition.  The athlete with the lowest total score in each group is the winner.  3, 2, 1, GO!</p>
+
+    
+
 </div>
