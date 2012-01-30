@@ -55,7 +55,7 @@
           <span class="rank">#<%= result.event_rank || 'X' %></span>
           <span class="athlete-info"><%= "#{result.athlete.name}" %></span>
           <br/>
-          <span class="pts"><%# result.result %> <span class="info"><%= " (##{result.athlete.number})" if result.athlete.number %><%= " from #{result.athlete.affiliation}" if result.athlete.affiliation %></span></span>
+          <span class="pts"><%= result.result %> <span class="info"><%= " (##{result.athlete.number})" if result.athlete.number %><%= " from #{result.athlete.affiliation}" if result.athlete.affiliation %></span></span>
         </div>
       <% end %>
     <% end %>
