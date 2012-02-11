@@ -4,6 +4,10 @@
 
 [wodleader.com](http://wodleader.com/)
 
+### Getting Started Guide
+
+[See how WodLeader works with the Getting Started Guide](https://github.com/briandoll/wodleader/wiki)
+
 ## Data Entry
 
 All data entry occurs at [wodleader.com/admin](http://wodleader.com/admin/).  The admin section is protected, so you'll need to know the username and password to continue.
