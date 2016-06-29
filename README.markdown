@@ -1,8 +1,6 @@
 # WodLeader - A multi-event Crossfit scorekeeping app
 
-## Main site w/ leaderboards
-
-[wodleader.com](http://wodleader.com/)
+Note: Wodleader is no longer hosted or maintained.
 
 ### Getting Started Guide
 
@@ -10,7 +8,7 @@
 
 ## Data Entry
 
-All data entry occurs at [wodleader.com/admin](http://wodleader.com/admin/).  The admin section is protected, so you'll need to know the username and password to continue.
+All data entry occurs at `/admin`.  The admin section is protected, so you'll need to know the username and password to continue.
 
 ### Competition
 
